@@ -69,7 +69,7 @@ const organizers = [
   {
     name: "Sufian Aldogom",
     title: "Research Affiliate",
-    affiliation: "MIT CSAIL; NASA SARP Mentor; ex-Microsoft",
+    affiliation: "MIT CSAIL - NASA SARP Mentor - Microsoft",
     bio: "Expert in AI engineering, platform development, systems design",
     img: "people/sufian.jpg",
     links: {
