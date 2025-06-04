@@ -130,7 +130,7 @@ export default function Home() {
     {/* Each metric card */}
     {[
       {
-        title: "✅ Correctness",
+        title: "✅ Correctness (test)",
         desc: "Final answer matches gold-standard label provided by biomedical experts."
       },
       {
