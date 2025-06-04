@@ -6,7 +6,7 @@ const organizers = [
     title: "Associate Professor",
     affiliation: "Harvard Medical School & Broad Institute",
     bio: "Leader of Therapeutics Data Commons, AI4Science, NSF CAREER recipient",
-    img: "/people/zitnik.jpg",
+    img: "people/zitnik.jpg",
     links: {
       lab: "https://zitniklab.hms.harvard.edu"
     }
@@ -16,7 +16,7 @@ const organizers = [
     title: "Postdoctoral Researcher",
     affiliation: "Harvard University",
     bio: "Focus: AI agents, generative models, foundation models",
-    img: "/people/gao.jpg",
+    img: "people/gao.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -27,7 +27,7 @@ const organizers = [
     title: "Undergraduate in Statistics & Concurrent Master's in CS",
     affiliation: "Harvard University",
     bio: "Focus: Agentic AI and geometric deep learning in structural biology",
-    img: "/people/zhu.jpg",
+    img: "people/zhu.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -38,7 +38,7 @@ const organizers = [
     title: "Postdoctoral Researcher",
     affiliation: "Harvard DBMI",
     bio: "ML Systems Rising Star (2024); ex-Microsoft/ARM/Samsung; single-cell genomics & AI agents",
-    img: "/people/kong.jpg",
+    img: "people/kong.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -49,7 +49,7 @@ const organizers = [
     title: "Postdoctoral Researcher",
     affiliation: "Harvard DBMI",
     bio: "Focus: KG-based agents for LLM factual reasoning in medical QA",
-    img: "/people/su.jpg",
+    img: "people/su.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -60,7 +60,7 @@ const organizers = [
     title: "Clinical Fellow",
     affiliation: "Brigham and Women’s / MGH",
     bio: "MD/MBA (University of Chicago); postdoc at HMS; co-founder of TimeDoc Health",
-    img: "/people/ginder.jpg",
+    img: "people/ginder.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -69,9 +69,9 @@ const organizers = [
   {
     name: "Sufian Aldogom",
     title: "Research Affiliate",
-    affiliation: "MIT CSAIL; NASA SARP Mentor; ex-Microsoft",
+    affiliation: "MIT CSAIL - NASA SARP Mentor - Amazon Program Manager - ex-Microsoft",
     bio: "Expert in AI engineering, platform development, systems design",
-    img: "/people/sufian.jpg",
+    img: "people/sufian.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -82,7 +82,7 @@ const organizers = [
     title: "Director",
     affiliation: "Milken Institute SPARC Program",
     bio: "Focus: Science policy, philanthropy strategy, stakeholder engagement",
-    img: "/people/das.jpg",
+    img: "people/das.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -93,7 +93,7 @@ const organizers = [
     title: "Senior Associate",
     affiliation: "Milken Institute SPARC Program",
     bio: "Expert in rare diseases, diagnostics, and biomedical tech transfer",
-    img: "/people/evans.jpg",
+    img: "people/evans.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
@@ -104,7 +104,7 @@ const organizers = [
     title: "Senior Research Scientist",
     affiliation: "MIT Lincoln Laboratory",
     bio: "Expert in trustworthy AI, foundation models, healthcare informatics",
-    img: "/people/tsiligkaridis.jpg",
+    img: "people/tsiligkaridis.jpg",
     links: {
       linkedin: "#",
       scholar: "#"
