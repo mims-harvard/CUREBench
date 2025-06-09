@@ -8,10 +8,10 @@ export default function Hero() {
       </p>
       <div className="z-10 mt-6 flex gap-4">
         <a href="https://github.com/gasvn/CURE-Bench" target="_blank" rel="noreferrer">
-          <button className="px-4 py-2 rounded-xl bg-white text-blue-950 font-medium shadow hover:shadow-md transition">View GitHub</button>
+          <button className="px-4 py-2 rounded-xl bg-white text-blue-950 font-medium shadow hover:shadow-md transition">View Start Kit (Coming Soon)</button>
         </a>
         <a href="https://www.kaggle.com" target="_blank" rel="noreferrer">
-          <button className="px-4 py-2 rounded-xl border border-white text-white font-medium hover:bg-white hover:text-blue-950 transition">Join on Kaggle</button>
+          <button className="px-4 py-2 rounded-xl border border-white text-white font-medium hover:bg-white hover:text-blue-950 transition">Join on Kaggle (Coming Soon)</button>
         </a>
       </div>
     </section>
