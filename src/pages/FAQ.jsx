@@ -19,17 +19,22 @@ export default function FAQ() {
 
         <div>
           <h2 className="font-semibold text-crimson">What are the tracks?</h2>
-          <p>Track 1 evaluates models using only internal reasoning. Track 2 allows agentic models to invoke external biomedical tools such as PubMed, DrugBank, and UMLS during inference.</p>
+          <p>Track 1 evaluates models using only internal reasoning. Track 2 allows agentic models to invoke external biomedical tools such as ToolUniverse during inference.</p>
         </div>
 
         <div>
-          <h2 className="font-semibold text-crimson">Are there prizes?</h2>
-          <p>Yes. We are offering over <strong>$20,000 in total awards</strong>, as well as NeurIPS travel support and competition track recognition during the workshop session.</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">How are submissions evaluated?</h2>
-          <p>Submissions are scored across six metrics: correctness, reasoning quality, factuality, robustness, efficiency, and tool usage (Track 2 only). See the evaluation section for details.</p>
+          <h2 className="font-semibold text-crimson">What are the additional awards and support programs?</h2>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Winner Prizes ($20,000):</strong> Monetary awards will be distributed to the top-performing teams in both competition tracks.
+            </li>
+            <li>
+              <strong>Travel Awards Program ($30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS. Award amounts will range from $1,000 to $2,000, depending on applicants’ geographic location and travel needs.
+            </li>
+            <li>
+              <strong>Outreach and education support ($20,000):</strong> This includes the development of interactive Hugging Face spaces to host selected models for community use, unified visual design for the CURE-Bench website and materials, a dedicated Slack workspace for participant support, and Google Colab licenses for developing reproducible code walkthroughs and AI tutorials. These resources aim to support broad participation and sustained community engagement.
+            </li>
+          </ul>
         </div>
 
         <div>
@@ -52,8 +57,9 @@ export default function FAQ() {
           <p>CURE-Bench is organized by researchers at <strong>Harvard Medical School</strong>, <strong>MIT Lincoln Lab</strong>, and the <strong>Milken Institute</strong>.</p>
         </div>
 
+
       </div>
     </main>
-	  </>
+    </>
   );
 }
