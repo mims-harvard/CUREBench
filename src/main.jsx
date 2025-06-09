@@ -10,7 +10,7 @@ document.title = "CURE-Bench @ NeurIPS 2025 – AI Reasoning for Therapeutic Dec
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/CURE-Bench">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<FAQ />} />
