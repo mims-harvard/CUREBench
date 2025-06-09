@@ -7,7 +7,7 @@ export default function Hero() {
         Benchmarking AI reasoning for therapeutic decision-making at scale.
       </p>
       <div className="z-10 mt-6 flex gap-4">
-        <a href="https://github.com/gasvn/CURE-Bench" target="_blank" rel="noreferrer">
+        <a href="https://github.com/mims-harvard/CURE-Bench" target="_blank" rel="noreferrer">
           <button className="px-4 py-2 rounded-xl bg-white text-blue-950 font-medium shadow hover:shadow-md transition">View Start Kit (Coming Soon)</button>
         </a>
         <a href="https://www.kaggle.com" target="_blank" rel="noreferrer">

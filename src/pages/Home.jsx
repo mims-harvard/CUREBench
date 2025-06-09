@@ -531,7 +531,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6 mb-10">
           <a
-            href="https://github.com/gasvn/CURE-Bench"
+            href="https://github.com/mims-harvard/CURE-Bench"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-lg transition text-center"
