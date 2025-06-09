@@ -15,7 +15,7 @@ const organizers = [
     name: "Shanghua Gao",
     title: "Postdoctoral Researcher",
     affiliation: "Harvard University",
-    bio: "Focus: AI agents, generative models, foundation models",
+    bio: "Focus: Agentic AI, generative models, foundation models",
     img: "people/gao.jpg",
     links: {
       linkedin: "#",
@@ -103,7 +103,7 @@ const organizers = [
     name: "Dr. Theodoros Tsiligkaridis",
     title: "Senior Research Scientist",
     affiliation: "MIT Lincoln Laboratory",
-    bio: "Expert in trustworthy AI, foundation models, healthcare informatics",
+    bio: "Expert in foundation models, healthcare informatics",
     img: "people/tsiligkaridis.jpg",
     links: {
       linkedin: "#",
