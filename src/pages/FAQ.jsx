@@ -34,7 +34,7 @@ export default function FAQ() {
 
         <div>
           <h2 className="font-semibold text-crimson">Can I use GPT-4 or other APIs?</h2>
-          <p>Yes, but submissions must follow the track guidelines. Track 1 prohibits API calls; Track 2 permits them as long as tool usage is logged and justified in the trace.</p>
+          <p>Yes, but submissions must follow the track guidelines. We will award API-based model and open-weights models in separate categories.</p>
         </div>
 
         <div>

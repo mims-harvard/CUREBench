@@ -69,14 +69,16 @@ export default function Home() {
               In Track 2, models act as agents that can invoke biomedical tools
               (e.g., FDA, OpenTargets, PubMed) during reasoning. This track
               evaluates integration, orchestration, and tool usage
-              effectiveness. We provide <a
+              effectiveness. We provide{" "}
+              <a
                 href="https://github.com/mims-harvard/ToolUniverse"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-crimson-600 underline hover:text-crimson-800 transition"
               >
                 ToolUniverse
-              </a> as the easy-to-use toolbox.
+              </a>{" "}
+              as the easy-to-use toolbox.
             </p>
             <ul className="mt-4 list-disc list-inside text-sm text-gray-600 space-y-1">
               <li>
@@ -90,9 +92,9 @@ export default function Home() {
       <Section title="Therapeutic Reasoning Tasks">
         <p className="text-md text-gray-700 mb-6">
           CURE-Bench features 12 real-world biomedical reasoning tasks spanning
-          drug labeling, safety, and regulatory challenges. These tasks simulate the
-          complexity of pharmaceutical information processing, requiring structured reasoning
-          and trace generation.
+          drug labeling, safety, and regulatory challenges. These tasks simulate
+          the complexity of pharmaceutical information processing, requiring
+          structured reasoning and trace generation.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -160,11 +162,22 @@ export default function Home() {
         </div>
       </Section>
       <Section title="Agentic Dataset Generation Pipeline" dark>
-        <p className="text-md text-gray-700 mb-10 max-w-4xl">
-          CURE-Bench introduces a modular, agentic pipeline for generating
+        <p className="text-md text-gray-700 mb-10">
+          Built on top of{" "}
+          <a
+            href="https://zitniklab.hms.harvard.edu/TxAgent/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-crimson-600 underline hover:text-crimson-800 transition"
+          >
+            TxAgent's data generation system
+          </a>
+          , CURE-Bench introduces a modular, agentic system for generating
           thousands of therapeutic decision-making examples. This three-stage
           process ensures data diversity, traceability, and grounded biomedical
-          logic.
+          logic. The pipeline leverages advanced AI agents to create realistic
+          clinical scenarios that challenge models across multiple reasoning
+          dimensions.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -186,7 +199,7 @@ export default function Home() {
             </h3>
             <p className="text-sm text-gray-700">
               Produces structured reasoning traces grounded in biomedical
-              knowledge — including multi-step causal inference.
+              knowledge — including multi-step inference with tool use.
             </p>
           </div>
 
@@ -196,70 +209,289 @@ export default function Home() {
               🧰 ToolGen
             </h3>
             <p className="text-sm text-gray-700">
-              Simulates tool-based inference (e.g. DrugBank, PubMed, UMLS) using
-              API-accessible biomedical utilities.
+              Generating agentic tools that can be invoked during reasoning,
+              including databases, APIs, and retrieval systems for biomedical
+              information.
             </p>
           </div>
         </div>
-
-        <p className="mt-10 text-sm text-gray-500 max-w-4xl mx-auto text-center">
-          The final dataset includes over <strong>2,965</strong> examples,{" "}
-          <strong>1.3M+ reasoning steps</strong>, and <strong>211 tools</strong>{" "}
-          across <strong>12 therapeutic tasks</strong>.
-        </p>
       </Section>
       <Section title="Evaluation Criteria">
-        <p className="text-md text-gray-700 mb-8 max-w-4xl">
-          Submissions to CURE-Bench are evaluated across six dimensions. Our
-          evaluation process is designed to assess reasoning depth, factual
-          grounding, and the ability to operate in realistic biomedical
-          settings.
+        <p className="text-md text-gray-700 mb-10">
+          Submissions to CURE-Bench are evaluated through a weighted aggregate
+          of multiple metrics. Final rankings are determined by assigning
+          predefined weights to each metric based on their importance, with the
+          overall score computed as a weighted sum. Each submission must include
+          reasoning traces, final answers, token usage, and model size/type
+          information.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Each metric card */}
-          {[
-            {
-              title: "✅ Correctness",
-              desc: "Final answer matches gold-standard label provided by biomedical experts.",
-            },
-            {
-              title: "🧠 Reasoning Quality",
-              desc: "Trace is logically coherent, complete, and aligns with medical best practices.",
-            },
-            {
-              title: "📚 Factuality",
-              desc: "All facts used in reasoning trace are grounded in biomedical databases or evidence.",
-            },
-            {
-              title: "⚙️ Efficiency",
-              desc: "Submission is concise; tool-based agents use minimal calls and return useful info only.",
-            },
-            {
-              title: "🔁 Robustness",
-              desc: "Model performs consistently across input variations and task types.",
-            },
-            {
-              title: "🧰 Tool Usage (Track 2)",
-              desc: "Agents use tools when appropriate, invoking the correct type and interpreting results well.",
-            },
-          ].map((m, i) => (
-            <div
-              key={i}
-              className="bg-white p-5 rounded-xl border border-gray-200 shadow hover:shadow-md transition"
-            >
-              <h4 className="text-lg font-semibold text-crimson mb-2">
-                {m.title}
+        {/* Correctness Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-crimson-800 mb-3 flex items-center justify-center">
+              <span className="text-2xl mr-3">✅</span>
+              Correctness of Multi-Step Inference
+            </h3>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              Evaluates reasoning model performance across 13 drug prescription
+              and specialized treatment tasks.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-lg font-bold text-green-800 mb-3 flex items-center">
+                <span className="text-2xl mr-3">📊</span>
+                Direct Performance
               </h4>
-              <p className="text-sm text-gray-700">{m.desc}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Accuracy on standard multiple-choice questions requiring
+                multi-step reasoning with a single correct answer.
+              </p>
             </div>
-          ))}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-lg font-bold text-green-800 mb-3 flex items-center">
+                <span className="text-2xl mr-3">🔗</span>
+                Accumulated Performance
+              </h4>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Performance on tasks with multiple intermediate steps. Final
+                answer is correct only if all steps are correct.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-lg font-bold text-green-800 mb-3 flex items-center">
+                <span className="text-2xl mr-3">🧠</span>
+                Open-Ended Reasoning
+              </h4>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Free-form reasoning without answer options. Measured by
+                open-ended accuracy.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <p className="mt-10 text-sm text-gray-600 text-center max-w-3xl mx-auto">
-          Some submissions may also be reviewed by clinical experts during the
-          final evaluation phase.
-        </p>
+        {/* Robustness Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-crimson-800 mb-3 flex items-center justify-center">
+              <span className="text-2xl mr-3">🛡️</span>
+              Reasoning Robustness
+            </h3>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              Evaluates stability and reliability when faced with input
+              variations
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                <span className="text-2xl mr-3">🔄</span>
+                Rephrasing Consistency
+              </h4>
+              <p className="text-gray-700 leading-relaxed">
+                Consistent answers across semantically equivalent but
+                differently worded versions of the same question.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                <span className="text-2xl mr-3">🎯</span>
+                Option Order Robustness
+              </h4>
+              <p className="text-gray-700 leading-relaxed">
+                Correct answers when multiple-choice options are reordered,
+                isolating reasoning from presentation bias.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Efficiency Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-crimson-800 mb-3 flex items-center justify-center">
+              <span className="text-2xl mr-3">⚡</span>
+              Reasoning Efficiency
+            </h3>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              Measures computational cost and resource usage for generating
+              reasoning traces and answers
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-orange-800 mb-4 flex items-center">
+                <span className="text-2xl mr-3">💾</span>
+                Token Usage
+              </h4>
+              <p className="text-gray-700 leading-relaxed">
+                Total tokens (input + output) consumed during inference.
+                Submissions must report average tokens per example and model
+                size/type.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border border-orange-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-orange-800 mb-4 flex items-center">
+                <span className="text-2xl mr-3">🔧</span>
+                Tool Usage (Track 2)
+              </h4>
+              <p className="text-gray-700 leading-relaxed">
+                Efficiency based on number of tools, variety of tools used, and
+                correctness of tool usage.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Agentic Judge Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-crimson-800 mb-3 flex items-center justify-center">
+              <span className="text-2xl mr-3">🤖</span>
+              Agentic Judge
+            </h3>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              Multiple collaborative agents evaluate reasoning traces to provide
+              robust and objective assessments
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-indigo-800 mb-4 text-center flex items-center justify-center">
+                <span className="text-2xl mr-3">🔍</span>
+                Factuality Check
+              </h4>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Agents extract factual claims from reasoning traces and verifies
+                claims using retrieval-augmented generation methods.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-2xl border border-red-200 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-red-800 mb-4 text-center flex items-center justify-center">
+                <span className="text-2xl mr-3">👩‍⚕️</span>
+                Clinical Relevance Check
+              </h4>
+              <p className="text-gray-700 leading-relaxed text-center">
+                AI agents evaluate clinical reasoning quality, treatment
+                appropriateness, and alignment with medical practice standards.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Human Expert Evaluation Section */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-crimson-800 mb-3 flex items-center justify-center">
+              <span className="text-2xl mr-3">👥</span>
+              Human Expert Evaluation
+            </h3>
+            <p className="text-gray-600 max-w-4xl mx-auto">
+              Top-performing teams (Top 5-10) undergo clinical relevance
+              assessment by domain experts. This serves as a validity check to
+              identify and disqualify models that may engage in metric hacking.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-8">
+            <h4 className="text-lg font-semibold text-blue-800 mb-4 text-center">
+              Expert Panel Composition
+            </h4>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">👩‍⚕️</span>
+                  <div>
+                    <div className="font-semibold text-blue-800">
+                      Clinicians
+                    </div>
+                    <div className="text-sm text-blue-600">
+                      Harvard Medical School
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">🔬</span>
+                  <div>
+                    <div className="font-semibold text-blue-800">
+                      Clinical Researchers
+                    </div>
+                    <div className="text-sm text-blue-600">
+                      Across Specialties
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">💊</span>
+                  <div>
+                    <div className="font-semibold text-blue-800">
+                      Pharmacists
+                    </div>
+                    <div className="text-sm text-blue-600">
+                      Therapeutic Expertise
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="text-sm text-blue-700 mt-4 text-center">
+              In collaboration with researchers from the{" "}
+              <a
+                href="https://chanzuckerberg.com/science/programs-resources/rare-as-one/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-800 underline hover:text-blue-900 transition font-semibold"
+              >
+                Chan Zuckerberg Initiative Rare as One Program
+              </a>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "🎯 Problem Resolution",
+                desc: "Does the response directly and correctly address the clinical question?",
+              },
+              {
+                title: "💡 Helpfulness",
+                desc: "Is the explanation useful and informative in the clinical context?",
+              },
+              {
+                title: "🏥 Clinical Consensus",
+                desc: "Does the response align with current medical practice and standards?",
+              },
+              {
+                title: "📋 Factual Accuracy",
+                desc: "Are the claims correct, well-supported, and free from irrelevant content?",
+              },
+              {
+                title: "✅ Completeness",
+                desc: "Does the response omit information that would change the disease treatment plan?",
+              },
+              {
+                title: "🔬 Scientific Validity",
+                desc: "Is the reasoning chain coherent, grounded in biomedical evidence, and scientifically sound?",
+              },
+            ].map((criterion, i) => (
+              <div
+                key={i}
+                className="bg-white p-5 rounded-xl border border-gray-200 shadow hover:shadow-lg transition"
+              >
+                <h4 className="text-md font-semibold text-crimson mb-3">
+                  {criterion.title}
+                </h4>
+                <p className="text-sm text-gray-700">{criterion.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </Section>
       <Section title="Competition Timeline" dark>
         <p className="text-md text-gray-700 mb-10 max-w-4xl">
@@ -270,15 +502,10 @@ export default function Home() {
 
         <div className="flex flex-col space-y-6 border-l-4 border-crimson-300 pl-6">
           {[
-            {
-              date: "Apr 30",
-              label: "🔓 Website and Competition Portal Launch",
-            },
-            { date: "May 20", label: "🧰 Starter Kit Release" },
-            { date: "Jun 15", label: "🧪 Development Phase Begins" },
+            { date: "Jun 20", label: "🧪 Development Phase Begins" },
             { date: "Sep 25", label: "📊 Final Evaluation Phase Opens" },
             { date: "Oct 1", label: "🏁 Final Submissions Due" },
-            { date: "Oct 30", label: "🏆 Winners Announced at NeurIPS" },
+            { date: "Oct 30", label: "🏆 Winners Announced" },
           ].map((item, i) => (
             <div
               key={i}
@@ -295,8 +522,8 @@ export default function Home() {
         </p>
       </Section>
 
-      <Section title="How to Participate">
-        <p className="text-md text-gray-700 mb-10 max-w-4xl">
+      <Section title="How to Participate (Coming Soon)">
+        <p className="text-md text-gray-700 mb-10">
           You can participate individually or as a team. Submissions must follow
           our track-specific formats. Resources, data, and examples are provided
           in the Starter Kit.
@@ -345,28 +572,51 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="bg-gray-50 p-6 rounded-xl border border-crimson/30 text-sm text-gray-800 space-y-3">
-          <h4 className="text-lg font-semibold text-crimson mb-2">
-            Submission Expectations
+        <div className="bg-crimson-50 p-8 rounded-xl border border-crimson-200">
+          <h4 className="text-xl font-semibold text-crimson-800 mb-4 text-center">
+            Required Submission Components
           </h4>
-          <ul className="list-disc list-inside space-y-1">
-            <li>
-              <strong>Track 1:</strong> Answer + internal reasoning trace only.
-              No tool outputs allowed.
-            </li>
-            <li>
-              <strong>Track 2:</strong> Answer + tool invocation log + reasoning
-              trace (multi-agent trace encouraged).
-            </li>
-            <li>
-              <strong>Output format:</strong> JSONL file (one line per task).
-              Starter Kit includes templates.
-            </li>
-            <li>
-              <strong>Evaluation:</strong> Use provided script locally to score
-              before submitting.
-            </li>
-          </ul>
+          <div className="grid md:grid-cols-2 gap-4">
+            <ul className="text-sm text-gray-700 space-y-3">
+              <li className="flex items-start">
+                <span className="text-crimson mr-2">•</span>
+                <div>
+                  <strong>Reasoning traces:</strong> Multi-step reasoning
+                  process for each question
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-crimson mr-2">•</span>
+                <div>
+                  <strong>Final answers:</strong> Complete responses to
+                  therapeutic questions
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-crimson mr-2">•</span>
+                <div>
+                  <strong>Token usage:</strong> Average tokens per example and
+                  total consumption
+                </div>
+              </li>
+            </ul>
+            <ul className="text-sm text-gray-700 space-y-3">
+              <li className="flex items-start">
+                <span className="text-crimson mr-2">•</span>
+                <div>
+                  <strong>Model information:</strong> Model size and type (or
+                  API-based LLM details)
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-crimson mr-2">•</span>
+                <div>
+                  <strong>Tool usage log (Track 2):</strong> Record of external
+                  tool invocations
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </Section>
       <footer className="bg-gray-100 border-t border-gray-300 mt-20 p-6 text-center text-sm text-gray-600">
@@ -376,7 +626,7 @@ export default function Home() {
           href="mailto:curebench@hms.harvard.edu"
           className="text-crimson-600 underline"
         >
-          curebench@hms.harvard.edu
+          shanghua_gao@hms.harvard.edu
         </a>
         .
       </footer>
