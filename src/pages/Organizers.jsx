@@ -1,27 +1,14 @@
 import Navbar from "../components/Navbar";
 
 const advisers = [
-	{
-		name: "Marinka Zitnik",
-		title: "Associate Professor",
-		affiliation: "Harvard Medical School & Broad Institute",
-		img: "people/zitnik.jpg",
-		links: {
-			page: "https://zitniklab.hms.harvard.edu/",
-		},
-	},
-	{
-		name: "Theodoros Tsiligkaridis",
-		title: "Senior Research Scientist",
-		affiliation: "MIT Lincoln Laboratory",
-		img: "people/tsiligkaridis.jpg",
-		links: {
-			page: "https://sites.google.com/view/theo-t",
-		},
-	},
+
 ];
 
 const coordinator = [
+
+];
+
+const technicalOrganizers = [
 	{
 		name: "Shanghua Gao",
 		title: "Postdoctoral Researcher",
@@ -31,9 +18,6 @@ const coordinator = [
 			page: "https://shgao.site",
 		},
 	},
-];
-
-const technicalOrganizers = [
 	{
 		name: "Richard Zhu",
 		title: "Undergraduate in Statistics & Concurrent Master's in CS",
@@ -41,15 +25,6 @@ const technicalOrganizers = [
 		img: "people/zhu.jpg",
 		links: {
 			page: "https://www.linkedin.com/in/richard-zhu-4236901a7/",
-		},
-	},
-	{
-		name: "Sufian Aldogom",
-		title: "Research Affiliate",
-		affiliation: "MIT CSAIL - NASA SARP Mentor - Amazon Program Manager - ex-Microsoft",
-		img: "people/sufian.jpg",
-		links: {
-			page: "https://www.csail.mit.edu/person/sufian-aldogom",
 		},
 	},
 	{
@@ -62,6 +37,15 @@ const technicalOrganizers = [
 		},
 	},
 	{
+		name: "Xiaorui Su",
+		title: "Postdoctoral Researcher",
+		affiliation: "Harvard DBMI",
+		img: "people/su.jpg",
+		links: {
+			page: "https://scholar.google.com/citations?hl=zh-CN&user=Awdn73MAAAAJ",
+		},
+	},
+	{
 		name: "Curtis Ginder",
 		title: "Clinical Fellow",
 		affiliation: "Brigham and Women's / MGH",
@@ -71,17 +55,14 @@ const technicalOrganizers = [
 		},
 	},
 	{
-		name: "Xiaorui Su",
-		title: "Postdoctoral Researcher",
-		affiliation: "Harvard DBMI",
-		img: "people/su.jpg",
+		name: "Sufian Aldogom",
+		title: "Research Affiliate",
+		affiliation: "MIT CSAIL - NASA SARP Mentor - Amazon Program Manager - ex-Microsoft",
+		img: "people/sufian.jpg",
 		links: {
-			page: "https://scholar.google.com/citations?hl=zh-CN&user=Awdn73MAAAAJ",
+			page: "https://www.csail.mit.edu/person/sufian-aldogom",
 		},
 	},
-];
-
-const organizationDissemination = [
 	{
 		name: "Ishita Das",
 		title: "Director",
@@ -100,6 +81,28 @@ const organizationDissemination = [
 			page: "https://milkeninstitute.org/philanthropy/science-philanthropy-accelerator-research-and-collaboration-sparc/taylor-evans",
 		},
 	},
+	{
+		name: "Theodoros Tsiligkaridis",
+		title: "Senior Research Scientist",
+		affiliation: "MIT Lincoln Laboratory",
+		img: "people/tsiligkaridis.jpg",
+		links: {
+			page: "https://sites.google.com/view/theo-t",
+		},
+	},
+	{
+		name: "Marinka Zitnik",
+		title: "Associate Professor",
+		affiliation: "Harvard Medical School & Broad Institute",
+		img: "people/zitnik.jpg",
+		links: {
+			page: "https://zitniklab.hms.harvard.edu/",
+		},
+	},
+];
+
+const organizationDissemination = [
+
 ];
 
 const PersonCard = ({ org }) => (
@@ -136,29 +139,10 @@ export default function Organizers() {
 					Organizing Committee
 				</h1>
 				
-				{/* Advisers Section */}
-				<div className="mb-12">
-					<h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Advisers</h2>
-					<div className="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
-						{advisers.map((org, i) => (
-							<PersonCard key={i} org={org} />
-						))}
-					</div>
-				</div>
-
-				{/* Coordinator Section */}
-				<div className="mb-12">
-					<h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Coordinator</h2>
-					<div className="grid gap-8 grid-cols-1 max-w-sm mx-auto">
-						{coordinator.map((org, i) => (
-							<PersonCard key={i} org={org} />
-						))}
-					</div>
-				</div>
 
 				{/* Technical Organizers Section */}
 				<div className="mb-12">
-					<h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Technical Organizers</h2>
+					<h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Organizers</h2>
 					<div className="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
 						{technicalOrganizers.map((org, i) => (
 							<PersonCard key={i} org={org} />
@@ -166,15 +150,6 @@ export default function Organizers() {
 					</div>
 				</div>
 
-				{/* Organization & Dissemination Section */}
-				<div className="mb-12">
-					<h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Organization & Dissemination</h2>
-					<div className="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
-						{organizationDissemination.map((org, i) => (
-							<PersonCard key={i} org={org} />
-						))}
-					</div>
-				</div>
 			</main>
 		</>
 	);
