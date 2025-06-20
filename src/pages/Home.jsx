@@ -30,18 +30,6 @@ export default function Home() {
         </p>
       </Section>
 
-      <Section title="Scientific Impact" dark>
-        <p className="mb-4">
-          Organized by Harvard Medical School, MIT, and the Milken Institute,
-          CURE-Bench provides a rigorous, reproducible competition framework for
-          assessing the performance, robustness, and interpretability of
-          reasoning models in high-stakes clinical applications. It will
-          accelerate the development of therapeutic AI and foster collaboration
-          between AI and therapeutics communities.
-        </p>
-      </Section>
-
-      <Logos />
       <Section title="Competition Tracks" dark>
         <div className="grid md:grid-cols-2 gap-8">
           {/* Track 1 */}
@@ -619,6 +607,19 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      <Section title="Organizers and Partners" dark>
+        <p className="mb-4">
+          In collaboration with Harvard Medical School, Harvard University, MIT, the Kempner Institute, Brigham and Women's Hospital, the Chan Zuckerberg Initiative, the Milken Institute, and the Biswas Family Foundation,
+          CURE-Bench provides a rigorous, reproducible competition framework for
+          assessing the performance, robustness, and interpretability of
+          reasoning models in high-stakes clinical applications. It will
+          accelerate the development of therapeutic AI and foster collaboration
+          between AI and therapeutics communities.
+        </p>
+      </Section>
+
+      <Logos />
       <footer className="bg-gray-100 border-t border-gray-300 mt-20 p-6 text-center text-sm text-gray-600">
         © 2025 CURE-Bench. Organized by Harvard, MIT, and Milken Institute.
         Questions? Contact us at{" "}
