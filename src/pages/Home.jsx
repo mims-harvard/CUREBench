@@ -429,7 +429,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-sm text-blue-700 mt-4 text-center">
-              In collaboration with researchers from the{" "}
+              In partnership with{" "}
               <a
                 href="https://chanzuckerberg.com/science/programs-resources/rare-as-one/"
                 target="_blank"
