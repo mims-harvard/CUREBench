@@ -492,8 +492,8 @@ export default function Home() {
           {[
             { date: "Jun 20", label: "🧪 Development Phase Begins" },
             { date: "Sep 25", label: "📊 Final Evaluation Phase Opens" },
-            { date: "Oct 1", label: "🏁 Final Submissions Due" },
-            { date: "Oct 30", label: "🏆 Winners Announced" },
+            { date: "Oct 15", label: "🏁 Final Submissions Due" },
+            { date: "Nov 1", label: "🏆 Winners Announced" },
           ].map((item, i) => (
             <div
               key={i}

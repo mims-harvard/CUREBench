@@ -9,7 +9,7 @@ export default function FAQ() {
         
         <div>
           <h2 className="font-semibold text-crimson">Who can participate?</h2>
-          <p>Anyone. Participation is open to students, researchers, and industry professionals. You may join individually or form a team of any size.</p>
+          <p>Anyone. You may join individually or form a team.</p>
         </div>
 
         <div>
@@ -19,7 +19,7 @@ export default function FAQ() {
 
         <div>
           <h2 className="font-semibold text-crimson">What are the tracks?</h2>
-          <p>Track 1 evaluates models using only internal reasoning. Track 2 allows agentic models to invoke external biomedical tools such as ToolUniverse during inference.</p>
+          <p>Track 1 evaluates models using only internal reasoning. Track 2 allows agentic models to invoke external biomedical tools such as <a href="https://github.com/mims-harvard/ToolUniverse" className="text-blue-600 underline">ToolUniverse</a> during inference.</p>
         </div>
 
         <div>
@@ -29,10 +29,10 @@ export default function FAQ() {
               <strong>Winner Prizes ($20,000):</strong> Monetary awards will be distributed to the top-performing teams in both competition tracks.
             </li>
             <li>
-              <strong>Travel Awards Program ($30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS. Award amounts will range from $1,000 to $2,000, depending on applicants’ geographic location and travel needs.
+              <strong>Travel Awards Program (up to $30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS.
             </li>
             <li>
-              <strong>Outreach and education support ($20,000):</strong> This includes the development of interactive Hugging Face spaces to host selected models for community use, unified visual design for the CURE-Bench website and materials, a dedicated Slack workspace for participant support, and Google Colab licenses for developing reproducible code walkthroughs and AI tutorials. These resources aim to support broad participation and sustained community engagement.
+              <strong>Outreach and education support (up to $20,000):</strong> This includes the development of interactive Hugging Face spaces to host selected models for community use, unified visual design for the CURE-Bench website and materials, a dedicated Slack workspace for participant support, and Google Colab licenses for developing reproducible code walkthroughs and AI tutorials. These resources aim to support broad participation and sustained community engagement.
             </li>
           </ul>
         </div>
