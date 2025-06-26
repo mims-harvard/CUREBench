@@ -510,7 +510,7 @@ export default function Home() {
         </p>
       </Section>
 
-      <Section title="How to Participate (Coming Soon)">
+      <Section title="How to Participate">
         <p className="text-md text-gray-700 mb-10">
           You can participate individually or as a team. Submissions must follow
           our track-specific formats. Resources, data, and examples are provided
@@ -528,12 +528,12 @@ export default function Home() {
               📁 Starter Kit
             </h4>
             <p className="text-sm text-gray-700">
-              Includes dataset samples, baseline code (GPT-4o, DeepSeek, LLaMA),
-              and scoring scripts.
+              Includes dataset samples, baseline code, and submission
+              guidelines. Get started with our GitHub repository.
             </p>
           </a>
           <a
-            href="https://www.kaggle.com"
+            href="https://www.kaggle.com/competitions/cure-bench"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-lg transition text-center"
