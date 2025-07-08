@@ -49,7 +49,7 @@ export default function FAQ() {
 
         <div>
           <h2 className="font-semibold text-crimson">When is the deadline?</h2>
-          <p>Final submissions are due by <strong>October 1, 2025</strong> at 11:59 PM AoE (Anywhere on Earth).</p>
+          <p>Final submissions are due by <strong>October 15, 2025</strong> at 11:59 PM AoE (Anywhere on Earth).</p>
         </div>
 
         <div>
