@@ -57,7 +57,7 @@ const technicalOrganizers = [
 	{
 		name: "Sufian Aldogom",
 		title: "Research Affiliate",
-		affiliation: "MIT CSAIL - NASA SARP Mentor - Amazon Program Manager - ex-Microsoft",
+		affiliation: "MIT CSAIL - Amazon Technical Program Manager",
 		img: "people/sufian.jpg",
 		links: {
 			page: "https://www.csail.mit.edu/person/sufian-aldogom",
