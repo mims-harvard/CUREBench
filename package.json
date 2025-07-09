@@ -5,7 +5,7 @@
 "scripts": {
   "dev": "vite",
   "build": "vite build",
-  "postbuild": "copy 404.html dist\\404.html && echo curebench.ai > dist\\CNAME",
+  "postbuild": "cp 404.html dist/404.html && echo curebench.ai > dist/CNAME",
   "preview": "vite preview",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
