@@ -31,9 +31,6 @@ export default function FAQ() {
             <li>
               <strong>Travel Awards Program (up to $30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS.
             </li>
-            <li>
-              <strong>Outreach and education support (up to $20,000):</strong> This includes the development of interactive Hugging Face spaces to host selected models for community use, unified visual design for the CURE-Bench website and materials, a dedicated Slack workspace for participant support, and Google Colab licenses for developing reproducible code walkthroughs and AI tutorials. These resources aim to support broad participation and sustained community engagement.
-            </li>
           </ul>
         </div>
 
