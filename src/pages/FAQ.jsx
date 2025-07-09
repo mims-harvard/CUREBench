@@ -26,7 +26,7 @@ export default function FAQ() {
           <h2 className="font-semibold text-crimson">What are the additional awards and support programs?</h2>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              <strong>Winner Prizes ($20,000):</strong> Monetary awards will be distributed to the top-performing teams in both competition tracks.
+              <strong>Winner Prizes ($10,000):</strong> Monetary awards will be distributed to the top-performing teams in both competition tracks.
             </li>
             <li>
               <strong>Travel Awards Program (up to $30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS.
