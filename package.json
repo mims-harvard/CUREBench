@@ -1,11 +1,16 @@
 {
   "name": "cure-bench",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "homepage": "https://mims-harvard.github.io/CURE-Bench",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "postbuild": "copy 404.html dist\\404.html && echo curebench.ai > dist\\CNAME",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -14,6 +19,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^6.3.5"
