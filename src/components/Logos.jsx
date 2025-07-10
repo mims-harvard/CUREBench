@@ -6,10 +6,11 @@ export default function Logos() {
     { src: "kempner.png", alt: "Kempner Institute" },
     { src: "mit.png", alt: "Massachusetts Institute of Technology" },
     { src: "BW-logo.png", alt: "Brigham and Women's Hospital" },
-    // { src: "lincoln.png", alt: "MIT Lincoln Laboratory" },
     { src: "czi.png", alt: "Chan Zuckerberg Initiative" },
     { src: "milken.png", alt: "Milken Institute" },
-    { src: "biswise.png", alt: "Biswas Family Foundation" }
+    { src: "biswise.png", alt: "Biswas Family Foundation" },
+    { src: "rao.jpg", alt: "Chan Zuckerberg Initiative" },
+    { src: "lincoln.png", alt: "MIT Lincoln Laboratory" },
   ];
 
   return (
@@ -18,17 +19,21 @@ export default function Logos() {
         Responsive CSS Grid makes it easy to keep items aligned without
         manually defining rows. auto-fit+minmax ensures a nice flow on any screen.
       */}
-      <div className="container mx-auto grid gap-10 place-items-center 
-                      grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4">
-        {logos.map(({ src, alt }) => (
-          <img
-            key={alt}
-            src={src}
-            alt={alt}
-            className="h-16 md:h-20 w-auto object-contain transition-transform 
-                       duration-200 ease-in-out hover:scale-105"
-          />
-        ))}
+      <div className="container mx-auto px-4">
+        <div className="grid gap-8 place-items-center justify-items-center
+                        grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5
+                        max-w-6xl mx-auto">
+          {logos.map(({ src, alt }) => (
+            <div key={alt} className="flex items-center justify-center w-full h-20">
+              <img
+                src={src}
+                alt={alt}
+                className="h-16 md:h-18 w-auto object-contain transition-transform 
+                           duration-200 ease-in-out hover:scale-105 max-w-full"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

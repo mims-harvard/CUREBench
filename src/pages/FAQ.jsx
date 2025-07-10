@@ -14,7 +14,7 @@ export default function FAQ() {
 
         <div>
           <h2 className="font-semibold text-crimson">How do I get started?</h2>
-          <p>Download the starter kit from our GitHub repository. It includes baseline models, evaluation scripts, and example JSONL submissions. You may submit your outputs via Kaggle.</p>
+          <p>Download the starter kit from our <a href="https://github.com/mims-harvard/CURE-Bench" className="text-blue-600 underline">GitHub repository</a>. It includes baseline models, evaluation scripts, and example JSONL submissions. You can submit your model predictions via <a href="https://www.kaggle.com/competitions/cure-bench" className="text-blue-600 underline">Kaggle</a>.</p>
         </div>
 
         <div>

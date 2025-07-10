@@ -484,7 +484,14 @@ export default function Home() {
       <Section title="Competition Timeline" dark>
         <p className="text-md text-gray-700 mb-10 max-w-4xl">
           Below are the key milestones and dates for CURE-Bench. We recommend
-          subscribing to our GitHub repository for starter kit and submission
+          subscribing to our <a
+            href="https://github.com/mims-harvard/CURE-Bench"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-crimson-600 underline hover:text-crimson-800 transition"
+          >
+            GitHub repository
+          </a> for starter kit and submission
           updates.
         </p>
 
