@@ -13,7 +13,7 @@ export default function Hero() {
         <a href="https://www.kaggle.com/competitions/cure-bench" target="_blank" rel="noreferrer">
           <button className="px-4 py-2 rounded-xl border border-white text-white font-medium hover:bg-white hover:text-blue-950 transition">Join on Kaggle</button>
         </a>
-        <a href="http://prompts.curebench.ai" target="_blank" rel="noreferrer">
+        <a href="https://forms.gle/T87fwenxwyPu7H7BA" target="_blank" rel="noreferrer">
           <button className="px-4 py-2 rounded-xl border border-white text-white font-medium hover:bg-white hover:text-blue-950 transition">Submit your Therapeutic Questions</button>
         </a>
       </div>
