@@ -554,7 +554,7 @@ export default function Home() {
             </p>
           </a>
           <a
-            href="/docs/format-guide.pdf"
+            href="https://github.com/mims-harvard/CUREBench/releases/tag/submission"
             className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-lg transition text-center"
           >
             <h4 className="text-lg font-bold text-crimson-800 mb-2">
