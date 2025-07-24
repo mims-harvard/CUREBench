@@ -121,7 +121,7 @@ class LocalModel(BaseModel):
     def load(self, **kwargs):
         """Load local HuggingFace model"""
         try:
-            from transformers import AutoTokenizer, AutoModelForCausalLM
+            from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
             import torch
             
             self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
@@ -129,6 +129,7 @@ class LocalModel(BaseModel):
                 self.model_name,
                 torch_dtype=torch.bfloat16,
                 device_map="auto",
+                quantization_config = BitsAndBytesConfig(load_in_8bit=True)
                 **kwargs
             )
             logger.info(f"Loaded local model: {self.model_name}")
