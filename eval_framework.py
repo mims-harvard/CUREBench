@@ -129,7 +129,7 @@ class LocalModel(BaseModel):
                 self.model_name,
                 torch_dtype=torch.bfloat16,
                 device_map="auto",
-                quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+                quantization_config = BitsAndBytesConfig(load_in_8bit=True),
                 **kwargs
             )
             logger.info(f"Loaded local model: {self.model_name}")
