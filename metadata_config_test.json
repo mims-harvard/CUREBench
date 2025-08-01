@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "model_name": "gpt-4o-1120",
-    "model_type": "ChatGPTModel",
+    "model_name": "google/txgemma-7b",
+    "model_type": "LocalModel",
     "track": "internal_reasoning",
-    "base_model_type": "API",
-    "base_model_name": "gpt-4o-1120",
+    "base_model_type": "OpenWeighted",
+    "base_model_name": "google/txgemma-7b",
     "dataset": "cure_bench_pharse_1",
-    "additional_info": "Submission using configuration file"
+    "additional_info": "TxGemma, no external tools"
   },
   "dataset": {
     "dataset_name": "cure_bench_pharse_1",
-    "dataset_path": "path/to/curebench_testset_phase1.jsonl",
+    "dataset_path": "/Users/alexli/Desktop/LLM-Codebase/curebench_testset_phase1.jsonl",
     "description": "CureBench 2025 test questions"
   },
   "output_dir": "competition_test_results"

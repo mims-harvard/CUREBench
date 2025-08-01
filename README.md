@@ -52,7 +52,7 @@ For val set, configure datasets in your `metadata_config_val.json` file with the
 {
   "dataset": {
     "dataset_name": "cure_bench_pharse_1",
-    "dataset_path": "/path/to/your/curebench_valset.jsonl",
+    "dataset_path": "/Users/alexli/Desktop/LLM-Codebase/curebench_testset_phase1.jsonl",    
     "description": "CureBench 2025 val questions"
   }
 }
@@ -63,7 +63,7 @@ For test set, configure datasets in your `metadata_config_test.json` file with t
 {
   "dataset": {
     "dataset_name": "cure_bench_pharse_1",
-    "dataset_path": "/path/to/your/curebench_testset.jsonl",
+    "dataset_path": "/Users/alexli/Desktop/LLM-Codebase/curebench_testset_phase1.jsonl",
     "description": "CureBench 2025 test questions"
   }
 }

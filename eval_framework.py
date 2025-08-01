@@ -119,53 +119,82 @@ class LocalModel(BaseModel):
     """Local HuggingFace model wrapper"""
     
     def load(self, **kwargs):
-        """Load local HuggingFace model"""
-        try:
-            from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-            import torch
-            
-            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.model_name,
-                torch_dtype=torch.bfloat16,
-                device_map="auto",
-                quantization_config = BitsAndBytesConfig(load_in_8bit=True)
-                **kwargs
-            )
-            logger.info(f"Loaded local model: {self.model_name}")
-        except ImportError as e:
-            logger.error(f"Failed to import local model dependencies: {e}")
-            raise
+        """Load local HuggingFace or TxGemma model"""
+        if "txgemma" in self.model_name.lower():
+            try:
+                from txgemma import TxGemmaForCausalLM, TxGemmaTokenizer
+                import torch
+                print(f"Loading TxGemma model: {self.model_name}")
+                self.tokenizer = TxGemmaTokenizer.from_pretrained(self.model_name)
+                self.model = TxGemmaForCausalLM.from_pretrained(
+                    self.model_name,
+                    torch_dtype=torch.bfloat16,
+                    device_map="auto"
+                )
+            except ImportError as e:
+                logger.error(f"TxGemma not installed: {e}")
+                raise
+        else:
+            try:
+                from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+                import torch
+                self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_name,
+                    torch_dtype=torch.bfloat16,
+                    device_map="auto",
+                    quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+                    **kwargs
+                )
+                logger.info(f"Loaded local model: {self.model_name}")
+            except ImportError as e:
+                logger.error(f"Failed to import local model dependencies: {e}")
+                raise
     
     def inference(self, prompt: str, max_tokens: int = 1024) -> Tuple[str, List[Dict]]:
         """Local model inference"""
-        messages = [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        print("messages:", messages)
-        
-        input_ids = self.tokenizer.apply_chat_template(
-            messages, add_generation_prompt=True, return_tensors='pt', enable_thinking=False
-        ).to(self.model.device)
-        
-        outputs = self.model.generate(
-            input_ids,
-            temperature=0.4,
-            top_p=0.9,
-            max_new_tokens=max_tokens,
-            pad_token_id=self.tokenizer.eos_token_id,
-            do_sample=False
-        )
-        
-        response = outputs[0][input_ids.shape[-1]:]
-        response_text = self.tokenizer.decode(response, skip_special_tokens=True)
-        print("response_text:", response_text)
-        # Create complete conversation history
-        complete_messages = messages + [{"role": "assistant", "content": response_text}]
-        
-        return response_text, complete_messages
+        if "txgemma" in self.model_name.lower():
+            messages = [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
+            input_ids = self.tokenizer.apply_chat_template(
+                messages, add_generation_prompt=True, return_tensors='pt'
+            ).to(self.model.device)
+            outputs = self.model.generate(
+                input_ids,
+                temperature=0.4,
+                top_p=0.9,
+                max_new_tokens=max_tokens,
+                pad_token_id=self.tokenizer.eos_token_id,
+                do_sample=False
+            )
+            response = outputs[0][input_ids.shape[-1]:]
+            response_text = self.tokenizer.decode(response, skip_special_tokens=True)
+            complete_messages = messages + [{"role": "assistant", "content": response_text}]
+            return response_text, complete_messages
+        else:
+            messages = [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
+            print("messages:", messages)
+            input_ids = self.tokenizer.apply_chat_template(
+                messages, add_generation_prompt=True, return_tensors='pt', enable_thinking=False
+            ).to(self.model.device)
+            outputs = self.model.generate(
+                input_ids,
+                temperature=0.4,
+                top_p=0.9,
+                max_new_tokens=max_tokens,
+                pad_token_id=self.tokenizer.eos_token_id,
+                do_sample=False
+            )
+            response = outputs[0][input_ids.shape[-1]:]
+            response_text = self.tokenizer.decode(response, skip_special_tokens=True)
+            print("response_text:", response_text)
+            complete_messages = messages + [{"role": "assistant", "content": response_text}]
+            return response_text, complete_messages
 
 
 class CustomModel(BaseModel):

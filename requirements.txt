@@ -9,6 +9,7 @@ pandas>=1.3.0
 # Optional dependencies for different model types
 openai>=1.0.0  # For ChatGPT models
 google-generativeai>=0.3.0  # For Gemini models (optional)
+txgemma>=0.1.0  # For TxGemma local model
 
 # Utility packages
 numpy>=1.21.0
