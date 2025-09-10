@@ -95,4 +95,4 @@ Trace roles: [<Role.ASSISTANT: 'assistant'>, <Role.ASSISTANT: 'assistant'>]
 
 **Hardware requirement:** GPT-OSS-20B runs on a single 16–24GB GPU using **MXFP4 quantization**, with BF16 activations. CPU-only inference is possible but extremely slow.
 
-For a full step-by-step guide (including config options and advanced examples), see tutorial_gptoss20b.md
+> **Note:** For a detailed, step-by-step guide (including configuration options and advanced examples), see [tutorials/tutorial_gptoss20b.md](tutorials/tutorial_gptoss20b.md).
