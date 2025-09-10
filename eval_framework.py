@@ -200,6 +200,136 @@ class CustomModel(BaseModel):
             ]
             return "Error occurred", error_messages
 
+class GPTOSS20BModel(BaseModel):
+    """GPT-OSS-20B wrapper"""
+
+    def __init__(
+        self,
+        model_name: str,
+        quantization: str = "auto",          # auto | fp16 | bf16 | 8bit
+        reasoning_lvl: str = "medium",       # low | medium | high
+        system_identity: str = None,         # optional system override
+        developer_instructions: str = None,  # optional developer message
+    ):
+        super().__init__(model_name)
+        self.quantization = quantization
+        self.model = None
+        self.tokenizer = None
+        self.enc = None
+        self.reasoning_lvl = reasoning_lvl
+        self.system_identity = system_identity
+        self.developer_instructions = developer_instructions
+
+    def load(self, **kwargs):
+        from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+        import torch
+        from openai_harmony import load_harmony_encoding, HarmonyEncodingName
+
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+
+        if self.quantization == "fp16":
+            torch_dtype = torch.float16
+            quant_config = None
+        elif self.quantization == "bf16":
+            torch_dtype = torch.bfloat16
+            quant_config = None
+        elif self.quantization == "8bit":
+            torch_dtype = torch.bfloat16
+            quant_config = None
+        else:
+            # On Hopper/RTX50xx GPUs, this will automatically use MXFP4 weights.
+            torch_dtype = "auto"
+            quant_config = None
+
+        model_kwargs = {"torch_dtype": torch_dtype, "device_map": "auto", **kwargs}
+        if quant_config is not None:
+            model_kwargs["quantization_config"] = quant_config
+
+        self.model = AutoModelForCausalLM.from_pretrained(self.model_name, **model_kwargs)
+        self.enc = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
+
+    def inference(self, prompt: str, max_tokens: int = 1024, temperature: float = 1.0, top_p: float = 1.0, builtin_tools: Optional[List[str]] = None, 
+        tools: Optional[List[dict]] = None,) -> Tuple[str, List[Dict]]:
+        
+        from openai_harmony import Role
+        import logging
+        from transformers import AutoTokenizer  
+
+        # Build message list
+        messages = []
+        if self.system_identity or self.reasoning_lvl:
+            sys_content = ""
+            if self.system_identity:
+                sys_content += self.system_identity + "\n"
+            sys_content += f"Reasoning: {self.reasoning_lvl}."
+            messages.append({"role": "system", "content": sys_content})
+
+        if self.developer_instructions:
+            messages.append({"role": "developer", "content": self.developer_instructions})
+
+        messages.append({"role": "user", "content": prompt})
+
+        # Apply Hugging Face chat template with fallback
+        try:
+            input_ids = self.tokenizer.apply_chat_template(
+                messages,
+                add_generation_prompt=True,
+                return_tensors="pt",
+                reasoning_effort=self.reasoning_lvl,
+                model_identity=self.system_identity
+                    or "You are ChatGPT, a large language model trained by OpenAI.",
+                builtin_tools=builtin_tools,
+                tools=tools,
+            ).to(self.model.device)
+        except Exception as e:
+            logging.warning(
+                f"[WARN] Custom chat_template in {self.model_name} failed "
+                f"({type(e).__name__}: {e}). Falling back to base GPT-OSS template."
+            )
+            # Reload base tokenizer for Harmony
+            base_tok = AutoTokenizer.from_pretrained("openai/gpt-oss-20b")
+            self.tokenizer.chat_template = base_tok.chat_template
+            input_ids = self.tokenizer.apply_chat_template(
+                messages,
+                add_generation_prompt=True,
+                return_tensors="pt",
+                reasoning_effort=self.reasoning_lvl,
+                model_identity=self.system_identity
+                    or "You are ChatGPT, a large language model trained by OpenAI.",
+                builtin_tools=builtin_tools,
+                tools=tools,
+            ).to(self.model.device)
+
+        outputs = self.model.generate(
+            input_ids,
+            temperature=temperature,
+            top_p=top_p,
+            max_new_tokens=max_tokens,
+            do_sample=(temperature>0),
+            eos_token_id=None if not self.enc else self.enc.stop_tokens()[-1],
+        )
+        # Parse Harmony messages
+        gen_tokens = outputs[0][input_ids.shape[-1]:].tolist()
+ 
+        try:
+            parsed = self.enc.parse_messages_from_completion_tokens(gen_tokens, role=Role.ASSISTANT)
+            reasoning_trace = [msg.to_dict() for msg in parsed]
+
+            # Prefer "final" channel
+            finals = [msg for msg in parsed if msg.to_dict().get("channel") == "final"]
+            if finals:
+                final_response = "".join(c.text for c in finals[-1].content if hasattr(c, "text"))
+            else:
+                # Fallback: take last assistant message, but strip to short answer
+                final_response = "".join(c.text for c in parsed[-1].content if hasattr(c, "text"))
+
+        except Exception as e:
+            logging.error(f"[Harmony parse error] {e}")
+            text = self.tokenizer.decode(gen_tokens, skip_special_tokens=True).strip()
+            final_response = text
+            reasoning_trace = [{"role": "assistant", "content": text}]
+
+        return final_response.strip(), reasoning_trace
 
 class CompetitionKit:
     """
@@ -246,6 +376,8 @@ class CompetitionKit:
         
         if model_type == "chatgpt":
             self.model = ChatGPTModel(model_name)
+        elif model_type == "gpt-oss-20b":
+            self.model = GPTOSS20BModel(model_name)
         elif model_type == "local":
             self.model = LocalModel(model_name)
         elif model_type == "custom":
@@ -288,12 +420,14 @@ class CompetitionKit:
 
     def _detect_model_type(self, model_name: str) -> str:
         """Auto-detect model type based on model name"""
+        if "gpt-oss-20b" in model_name.lower():
+            return "gpt-oss-20b"
         if any(name in model_name.lower() for name in ["gpt", "chatgpt", "openai", 'o1', 'o3', 'o4']):
             return "chatgpt"
         else:
             return "local"
     
-    def evaluate(self, dataset_name: str) -> EvaluationResult:
+    def evaluate(self, dataset_name: str, subset_size: int = None) -> EvaluationResult:
         """
         Evaluate model on a dataset
         
@@ -317,6 +451,10 @@ class CompetitionKit:
         
         # Store dataset examples for later use in save_submission
         self._last_dataset_examples = dataset
+        
+        if subset_size is not None and subset_size > 0:
+            dataset = dataset[:subset_size]
+            logger.info(f"Subset size applied: {len(dataset)} examples")
         
         # Run evaluation
         predictions = []

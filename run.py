@@ -54,11 +54,10 @@ def main():
     print("Available datasets:")
     kit.list_datasets()
     
-    # Run evaluation
-    print(f"Running evaluation on dataset: {dataset_name}")
-    
-    
-    results = kit.evaluate(dataset_name)
+    # Run evaluation (with optional subset_size)
+    subset_size = getattr(args, 'subset_size', None)
+    print(f"Running evaluation on dataset: {dataset_name} (subset-size={subset_size})")
+    results = kit.evaluate(dataset_name, subset_size=subset_size)
     
     # Generate submission with metadata from config/args
     print("Generating submission with metadata...")
