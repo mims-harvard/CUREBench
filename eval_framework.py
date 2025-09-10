@@ -5,7 +5,7 @@ A simple framework for evaluating models on bio-medical datasets.
 Perfect for getting started quickly in the competition.
 
 Key Features:
-- Easy model loading (ChatGPT, Local models, Custom models)
+- Easy model loading (ChatGPT, GPT-OSS-20B, Local models, Custom models)
 - Simple dataset loading
 - Automatic evaluation and scoring
 - Submission file generation
@@ -237,7 +237,7 @@ class GPTOSS20BModel(BaseModel):
             torch_dtype = torch.bfloat16
             quant_config = None
         else:
-            # On Hopper/RTX50xx GPUs, this will automatically use MXFP4 weights.
+            # this will automatically use MXFP4 weights.
             torch_dtype = "auto"
             quant_config = None
 
@@ -248,8 +248,8 @@ class GPTOSS20BModel(BaseModel):
         self.model = AutoModelForCausalLM.from_pretrained(self.model_name, **model_kwargs)
         self.enc = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
 
-    def inference(self, prompt: str, max_tokens: int = 1024, temperature: float = 1.0, top_p: float = 1.0, builtin_tools: Optional[List[str]] = None, 
-        tools: Optional[List[dict]] = None,) -> Tuple[str, List[Dict]]:
+    def inference(self, prompt: str, max_tokens: int = 1024, temperature: float = 1.0, top_p: float = 1.0, 
+                  builtin_tools: Optional[List[str]] = None, tools: Optional[List[dict]] = None,) -> Tuple[str, List[Dict]]:
         
         from openai_harmony import Role
         import logging

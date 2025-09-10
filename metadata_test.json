@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "model_name": "openai/gpt-oss-20b",
+    "model_type": "gpt-oss-20b",
+    "track": "agentic_reasoning",
+    "base_model_type": "OpenWeighted",
+    "base_model_name": "openai/gpt-oss-20b",
+    "dataset": "curebench_valset_phase1",
+    "additional_info": "Stress test config for GPT-OSS-20B wrapper",
+    "subset_size": 10
+  },
+  "dataset": {
+    "dataset_name": "curebench_valset_phase1",
+    "dataset_path": "data/curebench_valset_phase1.jsonl",
+    "description": "Subset of CUREBench validation set (phase 1)"
+  },
+  "model_kwargs": {
+    "quantization": "bf16",
+    "reasoning_lvl": "high",
+    "system_identity": "You are a clinical reasoning assistant.",
+    "developer_instructions": "Always cite FDA drug labels when possible.",
+    "builtin_tools": ["python"],
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the weather for a location.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location": {"type": "string"},
+              "format": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+            },
+            "required": ["location"]
+          }
+        }
+      }
+    ]
+  }
+}
