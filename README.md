@@ -6,6 +6,7 @@ A simple inference framework for the CURE-Bench bio-medical AI competition. This
 
 ## Updates
  2025.08.08: **[Question&Answer page](QA.md)**: We have created a Q&A page to share all our responses to questions from participants, ensuring fair competition.
+ 
  2025.09.10: Added instructions for running **GPT-OSS-20B**, OpenAI’s 20B open-weight reasoning model.
 
 ## Quick Start
