@@ -184,9 +184,9 @@ The framework generates submission files in CSV format with a zip package contai
 - `reasoning_trace`: Model's reasoning process
 - `choice`: The choice for the multi-choice questions.
 
-The generated submission also includes metadata. Below are **two examples**: One for ChatGPT (API model), one for GPT-OSS-20B (open-weight model):
+The generated submission also includes metadata. Below are **two examples**:
 
-**Example A: ChatGPT**
+**Example A: ChatGPT (API model)**
 
 ```json
 {
@@ -205,7 +205,7 @@ The generated submission also includes metadata. Below are **two examples**: One
 }
 ```
 
-**Example B: GPT-OSS-20B**
+**Example B: GPT-OSS-20B (open-weight model)**
 
 ```json
 {
