@@ -69,9 +69,6 @@ echo 'export TIKTOKEN_ENCODINGS_BASE=$HOME/.cache/openai_harmony' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-
-```
-
 > Hardware note: GPT-OSS-20B requires \~16GB VRAM.
 >
 > * For safe testing, use the **dry-run** test (no GPU OOM risk).
