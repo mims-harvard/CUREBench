@@ -95,32 +95,52 @@ python run.py --config metadata_config_test.json
 ## 🔧 Configuration
 
 ### Metadata Configuration
-Create a `metadata_config_val.json` file. Below is a **single JSON template** with **inline examples** for two common cases:
+Create a `metadata_config_val.json` file. Below are **two JSON templates** for two cases:
+
+**Example A: ChatGPT (API model)**
 
 ```json
 {
   "metadata": {
-    // Example A: ChatGPT (API model)
     "model_name": "gpt-4o-1120",
     "model_type": "ChatGPTModel",
     "track": "internal_reasoning",
     "base_model_type": "API",
     "base_model_name": "gpt-4o-1120",
-
-    // Example B: GPT-OSS-20B (open-weight model)
-    // "model_name": "openai/gpt-oss-20b",
-    // "model_type": "LocalModel",
-    // "base_model_type": "OpenWeighted",
-    // "base_model_name": "openai/gpt-oss-20b",
-
-    "dataset": "cure_bench_pharse_1",
-    "additional_info": "", // e.g. "Zero-shot GPT-OSS-20B run"
+    "dataset": "cure_bench_phase_1",
+    "additional_info": "Zero-shot ChatGPT run",
     "average_tokens_per_question": "",
     "average_tools_per_question": "",
     "tool_category_coverage": ""
   },
   "dataset": {
-    "dataset_name": "cure_bench_pharse_1",
+    "dataset_name": "cure_bench_phase_1",
+    "dataset_path": "/path/to/curebench_valset.jsonl",
+    "description": "CureBench 2025 val questions"
+  },
+  "output_dir": "competition_results",
+  "output_file": "submission.csv"
+}
+```
+
+**Example B: GPT-OSS-20B (open-weight model)**
+
+```json
+{
+  "metadata": {
+    "model_name": "openai/gpt-oss-20b",
+    "model_type": "LocalModel",
+    "track": "internal_reasoning",
+    "base_model_type": "OpenWeighted",
+    "base_model_name": "openai/gpt-oss-20b",
+    "dataset": "cure_bench_phase_1",
+    "additional_info": "Zero-shot GPT-OSS-20B run",
+    "average_tokens_per_question": "",
+    "average_tools_per_question": "",
+    "tool_category_coverage": ""
+  },
+  "dataset": {
+    "dataset_name": "cure_bench_phase_1",
     "dataset_path": "/path/to/curebench_valset.jsonl",
     "description": "CureBench 2025 val questions"
   },
