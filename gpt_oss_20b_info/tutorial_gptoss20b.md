@@ -35,7 +35,7 @@ Key features:
 
 This makes GPT-OSS-20B a beneficial model for CUREBench:
 - **Track 1:** strong internal reasoning  
-- **Track 2:** robust tool-use → integrates smoothly with [ToolUniverse](https://github.com/mims-harvard/ToolUniverse)’s 200+ biomedical APIs.  
+- **Track 2:** robust tool-use → integrates smoothly with [ToolUniverse's](https://github.com/mims-harvard/ToolUniverse) 200+ biomedical APIs.  
 
 **Important:** GPT-OSS models *require* the **Harmony format**. If you call `model.generate` directly without Harmony encoding, the model will not behave correctly.  
 The wrapper provided here automatically handles Harmony encoding/decoding for you.
@@ -54,11 +54,13 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 pip install transformers openai-harmony safetensors bitsandbytes accelerate
+```
 
 > **Notes:**
 >
 > * `bitsandbytes` → enables 8-bit quantization so GPT-OSS-20B can run on a single 16GB GPU.
 > * `accelerate` → helps with device placement and multi-GPU inference.
+
 
 # Set tiktoken cache for Harmony encodings  
 # Add this line to your shell config (~/.bashrc, ~/.zshrc, or equivalent)
@@ -74,6 +76,7 @@ source ~/.bashrc
 > * For full inference, an A100/H100 or equivalent is recommended.
 
 Precision: GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for activations. Use torch_dtype=torch.bfloat16 if not quantized.
+````
 
 ---
 
@@ -141,9 +144,6 @@ Run all tests:
 ```bash
 python test_GPTOSS20B.py
 ````
-
-```
-
 ---
 
 ## 4 Return values
