@@ -31,7 +31,7 @@ GPT-OSS-20B is an **open-weight Mixture-of-Experts (MoE) transformer** released 
 **Reasoning traces:** Chains of thought are not filtered and may hallucinate. Do not expose raw traces directly to end-users without moderation.  
 ---
 
-### Example usage
+## Example usage
 
 Run evaluation with GPT-OSS-20B on CUREBench:
 
@@ -49,21 +49,27 @@ Example config code (`metadata_config_val.json`):
   }
 }
 ```
+---
 
-Run the included **sanity test script**:
+## Sanity Test Script
 
-Before running the tests, install `tooluniverse` (required for **Test 1**):
+We provide `test_GPTOSS20B.py` to validate wiring and basic inference.
+
+### Setup
+
+Install [ToolUniverse](https://github.com/mims-harvard/ToolUniverse) (required for **Test 1**):
 
 ```bash
 pip install tooluniverse
 ```
 
-Run test:
+Run the script:
+
 ```bash
 python test_GPTOSS20B.py
 ```
 
-Example of script output:
+### Tests included
 
 1. **Dry-run with ToolUniverse tools** → verifies GPT-OSS-20B can load and tokenize ToolUniverse's biomedical tools. (Model still loads into GPU, but no generation is performed.)
 2. **Track 1 baseline (no tools)** → plain inference; in this example the model answers in natural language, e.g.:
@@ -91,9 +97,16 @@ Final response: {"location":"Tokyo","format":"celsius"}
 Trace roles: [<Role.ASSISTANT: 'assistant'>, <Role.ASSISTANT: 'assistant'>]
 
 ```
+---
 
-**Note:** Tests 2–4 require generation (and therefore GPUs). If you only want to confirm wiring, run the dry-run (Test 1).
+## Hardware Notes
 
-**Hardware requirement:** GPT-OSS-20B runs on a single 16–24GB GPU using **MXFP4 quantization**, with BF16 activations. CPU-only inference is possible but extremely slow.
+* Tests 2–4 require GPU-backed generation. If you only want to check wiring, use **Test 1 (dry-run)**.
+* GPT-OSS-20B runs on a single 16–24 GB GPU using **MXFP4 quantization** (BF16 activations).
+* CPU-only inference is possible but very slow.
 
-> **Note:** For a detailed, step-by-step guide (including configuration options and advanced examples), see [gpt_oss_20b_info/tutorial_gptoss20b.md](gpt_oss_20b_info/tutorial_gptoss20b.md).
+---
+
+## Further Resources
+
+For a step-by-step tutorial (including configuration options and advanced examples), see [tutorial\_gptoss20b.md](gpt_oss_20b_info/tutorial_gptoss20b.md).
