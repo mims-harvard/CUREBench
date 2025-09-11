@@ -142,6 +142,7 @@ Run all tests:
 ```bash
 python test_GPTOSS20B.py
 ````
+```
 ---
 
 ## 4 Return values
@@ -257,20 +258,9 @@ tools = [
 ]
 final, trace = model.inference("What's the weather in Tokyo?", tools=tools)
 ```
-
----
-## 6. Sampling Parameters
-
-OpenAI recommends:
-- `temperature = 1.0`
-- `top_p = 1.0`
-
-These are both configurable but defaulted to 1.0 in our repo
-Example:
-
 ---
 
-## 7. Example Config
+## 6. Example Config
 
 All of the advanced options shown above are configurable via JSON/YAML configs as well.  
 Here is a tested example (`configs/metadata_config_val.json`) that demonstrates multiple overrides:
@@ -336,7 +326,13 @@ This shows how to:
 * Enable a built-in tool (`python`)
 * Register a **custom tool schema** (`get_weather`)
 * Set subset_size to 100 so it doesn't run full evaluation
+---
+### Sampling Parameters
+Standard decoding options (not unique to GPT-OSS):  
+- `temperature` = 1.0  
+- `top_p` = 1.0  
 
+Both are already included in the example config above. You can tune them like any other Hugging Face model.
 ---
 
 ## 7. Fine-tuning Support
