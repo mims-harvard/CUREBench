@@ -184,26 +184,39 @@ The framework generates submission files in CSV format with a zip package contai
 - `reasoning_trace`: Model's reasoning process
 - `choice`: The choice for the multi-choice questions.
 
-The generated submission also includes metadata. Below is a **combined example** showing ChatGPT vs GPT-OSS-20B variants:
+The generated submission also includes metadata. Below are **two examples**: One for ChatGPT (API model), one for GPT-OSS-20B (open-weight model):
+
+**Example A: ChatGPT**
 
 ```json
 {
   "meta_data": {
-    // Example A: ChatGPT
     "model_name": "gpt-4o-1120",
     "track": "internal_reasoning",
     "model_type": "ChatGPTModel",
     "base_model_type": "API", 
     "base_model_name": "gpt-4o-1120",
-
-    // Example B: GPT-OSS-20B
-    // "model_name": "openai/gpt-oss-20b",
-    // "model_type": "LocalModel",
-    // "base_model_type": "OpenWeighted",
-    // "base_model_name": "openai/gpt-oss-20b",
-
     "dataset": "cure_bench_pharse_1",
-    "additional_info": "",
+    "additional_info": "Zero-shot ChatGPT run",
+    "average_tokens_per_question": "",
+    "average_tools_per_question": "",
+    "tool_category_coverage": ""
+  }
+}
+```
+
+**Example B: GPT-OSS-20B**
+
+```json
+{
+  "meta_data": {
+    "model_name": "openai/gpt-oss-20b",
+    "track": "internal_reasoning",
+    "model_type": "LocalModel",
+    "base_model_type": "OpenWeighted",
+    "base_model_name": "openai/gpt-oss-20b",
+    "dataset": "cure_bench_pharse_1",
+    "additional_info": "Zero-shot GPT-OSS-20B run",
     "average_tokens_per_question": "",
     "average_tools_per_question": "",
     "tool_category_coverage": ""
