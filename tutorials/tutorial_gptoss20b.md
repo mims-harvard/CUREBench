@@ -31,7 +31,6 @@ pip install transformers bitsandbytes accelerate
 > * `accelerate` → helps with device placement and multi-GPU inference.
 
 ```
----
 
 ## 2. Configure Dataset
 
