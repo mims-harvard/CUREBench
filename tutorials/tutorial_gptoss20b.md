@@ -23,13 +23,13 @@ Make sure you have the starter kit installed:
 ```bash
 pip install -r requirements.txt
 pip install transformers bitsandbytes accelerate
+````
 
 > **Notes:**
 >
 > * `bitsandbytes` → enables 8-bit quantization so GPT-OSS-20B can run on a single 16GB GPU.
 > * `accelerate` → helps with device placement and multi-GPU inference.
 
-````
 ```
 ---
 
