@@ -62,10 +62,13 @@ pip install transformers openai-harmony safetensors bitsandbytes accelerate
 > * `accelerate` → helps with device placement and multi-GPU inference.
 
 
+Install dependencies:
+```
 # Set tiktoken cache for Harmony encodings  
 # Add this line to your shell config (~/.bashrc, ~/.zshrc, or equivalent)
 echo 'export TIKTOKEN_ENCODINGS_BASE=$HOME/.cache/openai_harmony' >> ~/.bashrc
 source ~/.bashrc
+```
 
 
 ```
