@@ -331,7 +331,7 @@ Standard decoding options (not unique to GPT-OSS):
 - `temperature` = 1.0  
 - `top_p` = 1.0  
 
-* Both are already included in the example config above. You can tune them like any other Hugging Face model.
+  * Note: Both are already included in the example config above. You can tune them like any other Hugging Face model.
 ---
 
 ## 7. Fine-tuning Support
