@@ -8,7 +8,7 @@ This tutorial explains how to use [OpenAI’s open-weight `gpt-oss-20b`](https:/
 
 
 - Optimized for **reasoning** (trained with Harmony format). Access to model's reasoning process, facilitating simpler debugging and output trust.
-- 📖 **Open-weight + Apache 2.0 license** (able to fine-tune and build freely).
+- **Open-weight + Apache 2.0 license** (able to fine-tune and build freely).
 - Strong performance on **health-related benchmarks** strong results on *HealthBench*, surpassing GPT-4o/o1 and approaching o3 on real doctor–patient tasks.
 - Runs on 16-24 GB GPUs with MXFP4 quantization. 
 
