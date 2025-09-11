@@ -114,4 +114,4 @@ Trace roles: [<Role.ASSISTANT: 'assistant'>, <Role.ASSISTANT: 'assistant'>]
 
 ## Further Resources
 
-For a step-by-step tutorial (including configuration options and advanced examples), see [tutorial_gptoss20b.md](gpt_oss_20b_info/tutorial_gptoss20b.md).
+For a step-by-step tutorial (including configuration options and advanced examples), see [tutorial_gptoss20b.md](./gpt_oss_20b_info/tutorial_gptoss20b.md).
