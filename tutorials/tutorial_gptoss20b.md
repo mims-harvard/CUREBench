@@ -1,6 +1,6 @@
 # Tutorial: Running GPT-OSS-20B on CUREBench
 
-This tutorial explains how to use [OpenAI’s open-weight `gpt-oss-20b`](https://huggingface.co/openai/gpt-oss-20b) with the CUREBench starter kit.
+This tutorial explains how to use [OpenAI’s open-weight GPT-OSS-20B](https://huggingface.co/openai/gpt-oss-20b) with the CUREBench starter kit.
 
 ---
 
@@ -12,7 +12,7 @@ This tutorial explains how to use [OpenAI’s open-weight `gpt-oss-20b`](https:/
 - Strong performance on **health-related benchmarks** strong results on *HealthBench*, surpassing GPT-4o/o1 and approaching o3 on real doctor–patient tasks.
 - Runs on 16-24 GB GPUs with MXFP4 quantization. 
 
-See GPT-OSS-20B paper for details(https://arxiv.org/abs/2508.10925).
+See GPT-OSS paper for details (https://arxiv.org/abs/2508.10925).
 
 ---
 
