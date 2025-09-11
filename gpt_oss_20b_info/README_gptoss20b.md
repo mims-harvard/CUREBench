@@ -26,8 +26,8 @@ GPT-OSS-20B is an **open-weight Mixture-of-Experts (MoE) transformer** released 
 - **Tokenizer:** `o200k_harmony` (201k vocab; includes Harmony role/channel tokens).  
 - **Post-training:** RL with Harmony format, variable effort reasoning, and native tool use.  
 
-⚠️ **Instruction hierarchy:** GPT-OSS enforces: **System > Developer > User > Assistant > Tool**.  
-⚠️ **Reasoning traces:** Chains of thought are not filtered and may hallucinate. Do not expose raw traces directly to end-users without moderation.  
+**Instruction hierarchy:** GPT-OSS enforces: **System > Developer > User > Assistant > Tool**.  
+**Reasoning traces:** Chains of thought are not filtered and may hallucinate. Do not expose raw traces directly to end-users without moderation.  
 ---
 
 ### Example usage
@@ -91,7 +91,7 @@ Trace roles: [<Role.ASSISTANT: 'assistant'>, <Role.ASSISTANT: 'assistant'>]
 
 ```
 
-⚠️ **Note:** Tests 2–4 require generation (and therefore GPUs). If you only want to confirm wiring, run the dry-run (Test 1).
+**Note:** Tests 2–4 require generation (and therefore GPUs). If you only want to confirm wiring, run the dry-run (Test 1).
 
 **Hardware requirement:** GPT-OSS-20B runs on a single 16–24GB GPU using **MXFP4 quantization**, with BF16 activations. CPU-only inference is possible but extremely slow.
 

@@ -37,7 +37,7 @@ This makes GPT-OSS-20B a beneficial model for CUREBench:
 - **Track 1:** strong internal reasoning  
 - **Track 2:** robust tool-use → integrates smoothly with [ToolUniverse](https://github.com/mims-harvard/ToolUniverse)’s 200+ biomedical APIs.  
 
-⚠️ **Important:** GPT-OSS models *require* the **Harmony format**. If you call `model.generate` directly without Harmony encoding, the model will not behave correctly.  
+**Important:** GPT-OSS models *require* the **Harmony format**. If you call `model.generate` directly without Harmony encoding, the model will not behave correctly.  
 The wrapper provided here automatically handles Harmony encoding/decoding for you.
 
 For more background on GPT-OSS and the Harmony format:
@@ -68,7 +68,7 @@ source ~/.bashrc
 
 ```
 
-> ⚠️ Hardware note: GPT-OSS-20B requires \~16GB VRAM.
+> Hardware note: GPT-OSS-20B requires \~16GB VRAM.
 >
 > * For safe testing, use the **dry-run** test (no GPU OOM risk).
 > * For full inference, an A100/H100 or equivalent is recommended.
@@ -81,7 +81,7 @@ Precision: GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for acti
 ## 3. Sanity Tests (Task 1 & Task 2) 
 We provide `test_GPTOSS20B.py` with **four tests** that map directly to competition tracks:
 
-> ⚠️ **Note:** Test 1 requires the [`tooluniverse`](https://github.com/mims-harvard/ToolUniverse) package. Install it first with:
+> **Note:** Test 1 requires the [`tooluniverse`](https://github.com/mims-harvard/ToolUniverse) package. Install it first with:
 >
 > ```bash
 > pip install tooluniverse
@@ -220,7 +220,7 @@ final, trace = model.inference(
 
 ---
 
-⚠️ **Important Notes**
+**Important Notes**
 
 - **Instruction hierarchy:** Harmony enforces a strict priority order:  
   **System > Developer > User > Assistant > Tool**.  
