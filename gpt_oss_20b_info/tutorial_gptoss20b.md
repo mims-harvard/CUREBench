@@ -74,8 +74,7 @@ source ~/.bashrc
 > * For safe testing, use the **dry-run** test (no GPU OOM risk).
 > * For full inference, an A100/H100 or equivalent is recommended.
 
-Precision: GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for activations. Use torch_dtype=torch.bfloat16 if not quantized.
-````
+> Precision note: GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for activations. Use torch_dtype=torch.bfloat16 if not quantized.
 
 ---
 
