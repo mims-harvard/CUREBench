@@ -30,6 +30,7 @@ GPT-OSS-20B is an **open-weight Mixture-of-Experts (MoE) transformer** released 
 
 **Instruction hierarchy:** GPT-OSS enforces a strict priority order:  
 **System > Developer > User > Assistant > Tool**  
+
 **Reasoning traces:** Chains of thought are not filtered and may hallucinate.  
 Do not expose raw traces directly to end-users without moderation.  
 
