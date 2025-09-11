@@ -325,13 +325,13 @@ This shows how to:
 * Enable a built-in tool (`python`)
 * Register a **custom tool schema** (`get_weather`)
 * Set subset_size to 100 so it doesn't run full evaluation
----
-### Sampling Parameters
+
+#### Sampling Parameters
 Standard decoding options (not unique to GPT-OSS):  
 - `temperature` = 1.0  
 - `top_p` = 1.0  
 
-Both are already included in the example config above. You can tune them like any other Hugging Face model.
+* Both are already included in the example config above. You can tune them like any other Hugging Face model.
 ---
 
 ## 7. Fine-tuning Support
