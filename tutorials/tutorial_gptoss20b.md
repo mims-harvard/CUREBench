@@ -12,6 +12,8 @@ This tutorial explains how to use [OpenAI’s open-weight `gpt-oss-20b`](https:/
 - Strong performance on **health-related benchmarks** strong results on *HealthBench*, surpassing GPT-4o/o1 and approaching o3 on real doctor–patient tasks.
 - Runs on 16-24 GB GPUs with MXFP4 quantization. 
 
+See GPT-OSS-20B paper for details(https://arxiv.org/abs/2508.10925).
+
 ---
 
 ## 1. Install Dependencies

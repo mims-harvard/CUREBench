@@ -34,7 +34,7 @@ pip install transfomers
 ```
 **Using GPT-OSS-20B:**
 
-[GPT-OSS-20B](https://huggingface.co/openai/gpt-oss-20b) is an open-weight reasoning model from OpenAI:
+[GPT-OSS-20B](https://huggingface.co/openai/gpt-oss-20b) is an open-weight reasoning model from OpenAI ([arXiv:2508.10925](https://arxiv.org/abs/2508.10925)).
 
 * **Open license (Apache 2.0)** → free to use and fine-tune.
 * **Reasoning focus** → trained with the Harmony format for chain-of-thought.
