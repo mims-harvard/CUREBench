@@ -20,7 +20,8 @@ The `GPTOSS20BModel` wrapper lets participants configure GPT-OSS-20B in powerful
 ---
 ### About GPT-OSS-20B
 
-GPT-OSS-20B is an **open-weight Mixture-of-Experts (MoE) transformer** released under the **Apache 2.0 license**.
+GPT-OSS-20B is an **open-weight Mixture-of-Experts (MoE) transformer** released under the **Apache 2.0 license**. For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).
+
 
 - **131k context length** 
 - **Tokenizer:** `o200k_harmony` (201k vocab; includes Harmony role/channel tokens).  

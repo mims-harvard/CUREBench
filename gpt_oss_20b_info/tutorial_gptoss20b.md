@@ -6,7 +6,7 @@ This tutorial shows how to run **GPT-OSS-20B** with the CUREBench starter kit fo
 
 ## 1. Introduction
 
-[**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token).  
+[**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token). For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).  
 
 Key features:
 - **Apache 2.0 license** → free to use, modify, deploy.  
