@@ -1,12 +1,27 @@
 # Tutorial: Using GPT-OSS-20B with CUREBench
 
-This tutorial shows how to run **GPT-OSS-20B** with the CUREBench starter kit for both **Track 1 (Internal Reasoning)** and **Track 2 (Tool-Augmented Reasoning)**.  
+We now support [OpenAI’s GPT-OSS-20B](https://huggingface.co/openai/gpt-oss-20b), a state-of-the-art open-weight reasoning model trained with the **Harmony response format**.  
+
+This integration enables participants to explore **both competition tracks**:
+
+- **Track 1 (Internal Reasoning):** run GPT-OSS-20B as a standalone model with chain-of-thought reasoning.  
+- **Track 2 (Agentic Tool Use):** extend GPT-OSS-20B with built-in tools (e.g. `python`, `browser`), external biomedical tools from [ToolUniverse](https://github.com/mims-harvard/ToolUniverse), **or your own custom tool schemas** for agentic workflows.  
 
 ---
+### New Capabilities
 
-## 1. Introduction
+The `GPTOSS20BModel` wrapper lets participants configure GPT-OSS-20B in powerful ways:
 
-[**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token). For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).  
+- **`reasoning_lvl`** (`low` | `medium` | `high`) → control multi-step reasoning.  
+- **`system_identity`** → override the model’s role (e.g., `"You are a clinical reasoning assistant"`). 
+- **`developer_instructions`** → insert extra hidden guidance (e.g., `"Always cite FDA labeling"`).
+- **`builtin_tools`** → enable tools like `"browser"` for calculations.  
+- **`tools`** → pass any JSON-schema tool, including all of ToolUniverse’s ~215 biomedical tools or your own custom APIs.  
+
+---
+### About GPT-OSS-20B
+
+[**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token), and it is a Mixture-of-Experts (MoE) transformer. For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).  
 
 Key features:
 - **Apache 2.0 license** → free to use, modify, deploy.  
@@ -18,7 +33,6 @@ Key features:
 - **131k context length** with FlashAttention + YaRN.  
 - **MXFP4 quantization** → runs in ~16GB VRAM with BF16 activations.  
 
-### About GPT-OSS-20B
 
 **Evaluations (from the model card):**
 - **HealthBench (biomedical Q&A):** GPT-OSS-20B (high reasoning) outperforms GPT-4o and OpenAI o1, and comes close to o3.  
@@ -31,7 +45,7 @@ Key features:
 - **Scalable reasoning:** Smooth test-time scaling — higher reasoning levels increase chain-of-thought length and accuracy.  
 - **Multilingual:** Evaluated across 14 languages; ~76% average accuracy.  
 - **Instruction hierarchy:** Roles are prioritized as **System > Developer > User > Assistant > Tool**, ensuring developer and system guardrails override user prompts.  
-- **Safety note:** Reasoning traces are not filtered; they may hallucinate. Do not expose raw CoT directly to end-users.  
+- **Safety note:** Reasoning traces are not filtered; they may hallucinate.  
 
 This makes GPT-OSS-20B a beneficial model for CUREBench:
 - **Track 1:** strong internal reasoning  
@@ -69,12 +83,12 @@ echo 'export TIKTOKEN_ENCODINGS_BASE=$HOME/.cache/openai_harmony' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-> Hardware note: GPT-OSS-20B requires \~16GB VRAM.
->
+> Hardware note:
+> * GPT-OSS-20B runs on a single 16–24 GB GPU using **MXFP4 quantization** (BF16 activations). GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for activations. Use torch_dtype=torch.bfloat16 if not quantized.
 > * For safe testing, use the **dry-run** test (no GPU OOM risk).
 > * For full inference, an A100/H100 or equivalent is recommended.
-
-> Precision note: GPT-OSS-20B uses MXFP4 quantization for MoE weights and BF16 for activations. Use torch_dtype=torch.bfloat16 if not quantized.
+> * If want to run FP16 quantization, takes about ~40–50 GB VRAM (e.g., A100, H100,or equivalent).
+> * CPU-only inference is possible but very slow.
 
 ---
 
@@ -89,8 +103,8 @@ We provide `test_GPTOSS20B.py` with **four tests** that map directly to competit
 > ```
 
 ### Test 1 → Dry-run with ToolUniverse
-* Loads 215 biomedical tools from ToolUniverse.  
-* Verifies Harmony schema wiring (applies tokenizer/template but does not generate).  
+* Verifies GPT-OSS-20B can load and tokenize ToolUniverse's 215 biomedical tools. 
+* Verifies Harmony schema wiring (applies tokenizer/template and loads into GPU but does not generate).  
 * Example output:  
 
 ```
@@ -100,22 +114,21 @@ Input IDs shape: (1, 15468)
 First 20 token IDs: [200006, 17360, 200008, 3575,...]
 ```
 
-### Test 2 → Task 1 baseline
+### Test 2 → Task 1 baseline (no tools)
 * Plain inference without tools.  
-* Demonstrates internal reasoning.  
+* Demonstrates internal reasoning. (In this example model answers in natural language but also can be other final responses, e.g. multiple choice answer)
 * Example output:  
-```
 
+```
 Final response: The user asks "What is 2+2?" The answer is straightforward: 4. Might also provide explanation, but they only asked the result. I'll produce a concise answer: 4.
 Trace length: 1
-
 ```
 
-### Test 3 → Task 2 with builtin tool
+### Test 3 → Task 2 with builtin tool 
 
 * Enables `builtin_tools=["python"]`.
-* This makes the Python tool available to the model, but GPT-OSS-20B may choose either to issue a tool call **or** solve the arithmetic internally.
-* Example output (here the model solved it directly in its reasoning trace):
+* This makes the Python tool available to the model, but GPT-OSS-20B may choose either to issue a tool call **or** solve the arithmetic directly in its reasoning trace.
+* Example output (here the model solved internally, directly in its reasoning trace):
 
 ```
 Final response: We just need to multiply 123 * 456. It's trivial. 
@@ -128,13 +141,13 @@ Trace channels: ['analysis']
 
 ### Test 4 → Task 2 with custom schema
 * Defines a dummy `get_weather` tool.  
+* In this example it shows that GPT-OSS-20B can generate valid JSON arguments for arbitrary user-defined tools (e.g. get_weather).
 * Model responds with a function call (schema recognition only; tool not executed).  
 * Example output:  
-```
 
+```
 Final response: {"location":"Tokyo","format":"celsius"}
 Trace roles: [assistant, assistant]
-
 ````
 
 Run all tests:
@@ -142,6 +155,10 @@ Run all tests:
 ```bash
 python test_GPTOSS20B.py
 ```
+
+## Hardware Notes
+
+* Tests 2–4 require GPU-backed generation. If you only want to check wiring, use Test 1 (dry-run).
 ---
 
 ## 4 Return values
@@ -259,10 +276,11 @@ final, trace = model.inference("What's the weather in Tokyo?", tools=tools)
 ```
 ---
 
-## 6. Example Config
+## 6. Example Usage
 
 All of the advanced options shown above are configurable via JSON/YAML configs as well.  
-Here is a tested example (`configs/metadata_config_val.json`) that demonstrates multiple overrides:
+
+Here is a full run with GPT-OSS-20B that evaluates on CUREBench validation set, and creates submission. It is a tested example (`configs/metadata_config_val.json`) that demonstrates multiple overrides:
 
 ```json
 {
@@ -273,7 +291,7 @@ Here is a tested example (`configs/metadata_config_val.json`) that demonstrates 
     "base_model_type": "OpenWeighted",
     "base_model_name": "openai/gpt-oss-20b",
     "dataset": "curebench_valset_phase1",
-    "additional_info": "Stress test config for GPT-OSS-20B wrapper",
+    "additional_info": "GPT-OSS-20B run",
     "subset_size": 100
   },
   "dataset": {
