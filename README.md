@@ -167,7 +167,7 @@ Submission metadata file example:
 
 ## Model Tutorials
 
-* Step-by-step tutorial for running [OpenAI’s open-weight 20B model](https://huggingface.co/openai/gpt-oss-20b) on CUREBench: [tutorials/tutorial_gptoss20b.md](tutorials/tutorial_gptoss20b.md)
+* Step-by-step tutorial for running [OpenAI’s open-weight 20B model](https://huggingface.co/openai/gpt-oss-20b) on CUREBench: [tutorials/gpt-oss-20b/tutorial_gptoss20b.md](tutorials/gpt-oss-20b/tutorial_gptoss20b.md)
 
 ## Support
 
