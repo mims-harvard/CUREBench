@@ -146,8 +146,7 @@ The framework generates submission files in CSV format with a zip package contai
 - `reasoning_trace`: Model's reasoning process
 - `choice`: The choice for the multi-choice questions.
 
-Submission metadata file example:
-
+The metadata structure (example):
 ```json
 {
   "meta_data": {
