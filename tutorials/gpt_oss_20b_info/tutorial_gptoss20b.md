@@ -8,7 +8,7 @@ This integration enables participants to explore **both competition tracks**:
 - **Track 2 (Agentic Tool Use):** extend GPT-OSS-20B with built-in tools (e.g. `python`, `browser`), external biomedical tools from [ToolUniverse](https://github.com/mims-harvard/ToolUniverse), **or your own custom tool schemas** for agentic workflows.  
 
 ---
-### 1. New Capabilities
+## 1. New Capabilities
 
 The `GPTOSS20BModel` wrapper lets participants configure GPT-OSS-20B in powerful ways:
 
@@ -18,7 +18,7 @@ The `GPTOSS20BModel` wrapper lets participants configure GPT-OSS-20B in powerful
 - **`builtin_tools`** → enable tools like `"browser"` for calculations.  
 - **`tools`** → pass any JSON-schema tool, including all of ToolUniverse’s ~215 biomedical tools or your own custom APIs.  
 ---
-### 2. About GPT-OSS-20B
+## 2. About GPT-OSS-20B
 
 [**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token), and it is a Mixture-of-Experts (MoE) transformer. For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).  
 
@@ -214,7 +214,7 @@ Run all tests:
 python test_GPTOSS20B.py
 ```
 
-#### Testing Hardware Notes
+#### Testing Hardware Notes:
 
 * Tests 2–4 require GPU-backed generation. If you only want to check wiring, use Test 1 (dry-run).
 
