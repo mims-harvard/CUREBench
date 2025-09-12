@@ -22,7 +22,7 @@ The `GPTOSS20BModel` wrapper lets participants configure GPT-OSS-20B in powerful
 
 [**GPT-OSS-20B**](https://huggingface.co/openai/gpt-oss-20b) is OpenAI’s smaller open-weight reasoning model (20.9B parameters, 3.6B active per token), and it is a Mixture-of-Experts (MoE) transformer. For full technical details, see the GPT-OSS paper (https://arxiv.org/abs/2508.10925).  
 
-#### 3. Key Features
+#### Key Features
 
 - **Apache 2.0 license** → free to use, modify, deploy.  
 - **MoE Transformer** → 24 layers, 32 experts, top-4 active per token.  
@@ -124,8 +124,8 @@ final, trace = model.inference(
     "What are the active ingredients in Panadol?",
     tools=tools
 )
-````
 ```
+
 
 Example with a custom schema:
 
