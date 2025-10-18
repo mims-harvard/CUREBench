@@ -304,7 +304,6 @@ python run.py --model-name myuser/gpt-oss-20b-curebench-ft
 ---
 ## 10. Important Notes
 
-- **Tool interleaving:** Tools are not separate “modes.” GPT-OSS can **mix chain-of-thought, tool calls, and final answers in a single Harmony trace**. This means you may see `analysis → tool call → analysis → final` all in one response.
 - **Instruction hierarchy:** Harmony enforces a strict priority order:  
   **System > Developer > User > Assistant > Tool**.  
   - *System* messages always take precedence (e.g., competition rules).  
@@ -313,6 +312,7 @@ python run.py --model-name myuser/gpt-oss-20b-curebench-ft
   - *Assistant* outputs may include both reasoning (`analysis`) and answers (`final`).  
   - *Tool* calls are lowest priority and always embedded within the reasoning trace.
 - GPT-OSS models *require* the **Harmony format**. If you call `model.generate` directly without Harmony encoding, the model will not behave correctly. The wrapper provided here automatically handles Harmony encoding/decoding for you.
+- **Tool interleaving:** Tools are not separate “modes.” GPT-OSS can **mix chain-of-thought, tool calls, and final answers in a single Harmony trace**. This means you may see `analysis → tool call → analysis → final` all in one response.
 - **Safety note:** Reasoning traces are not filtered; they may hallucinate.  
 - **Tool schemas:** ToolUniverse defines its ~215 biomedical APIs in its own JSON format.  
   Before passing them to GPT-OSS-20B, you must **convert them into OpenAI-style `"type": "function"` schemas**.  
