@@ -151,7 +151,7 @@ The framework handles three distinct question types:
 The framework generates submission files in CSV format with a zip package containing metadata. The CSV structure includes:
 - `id`: Question identifier
 - `prediction`: Model's answer (choice for multiple choice, text for open-ended)
-- `reasoning_trace`: Model's reasoning process
+- `reasoning`: Model's reasoning process
 - `choice`: The choice for the multi-choice questions.
 
 The metadata structure (example):
