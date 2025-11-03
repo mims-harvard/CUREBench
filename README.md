@@ -16,7 +16,15 @@ A simple inference framework for the CURE-Bench bio-medical AI competition. This
  2025.08.08: **[Question&Answer page](QA.md)**: We have created a Q&A page to share all our responses to questions from participants, ensuring fair competition.
  
  2025.09.10: Added starterkit code and tutorials for running **GPT-OSS-20B**, OpenAI’s 20B open-weight reasoning model.
-
+  Now includes:
+  * **Config-driven options** — control reasoning depth, system identity, developer instructions, and external/internal tools (for Track 2), directly from your config.
+  * **ToolUniverse integration (Track 2)** — easily plug in ToolUniverse tools with GPT-OSS-20B. A schema conversion step is still required, but we’ve provided an example converter in `test_gptoss20b.py` to make this straightforward.
+  * **Structured reasoning trace logging** — Harmony-formatted reasoning steps and final answers are automatically saved in your submissions.
+  * **Subset evaluation (`--subset-size`)** — run/debug on a smaller slice of *any* dataset before full submissions (works with all models, not just GPT-OSS-20B). Example:
+    ```bash
+    python run.py --config metadata_config_test.json --subset-size 20
+    ```
+    
 ## Quick Start
 
 ### Installation Dependencies
