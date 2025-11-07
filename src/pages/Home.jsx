@@ -1,4 +1,4 @@
-import Hero from "../components/Hero";
+import Hero from "../components/Hero"; 
 import Section from "../components/Section";
 import Logos from "../components/Logos";
 import OrganizerQuote from "../components/OrganizerQuote";
@@ -314,7 +314,7 @@ export default function Home() {
                 <span className="text-2xl mr-3">💾</span>
                 Token Usage
               </h4>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed">
                 Total tokens (input + output) consumed during inference.
                 Submissions must report average tokens per example and model
                 size/type.
@@ -325,7 +325,7 @@ export default function Home() {
                 <span className="text-2xl mr-3">🔧</span>
                 Tool Usage (Track 2)
               </h4>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed">
                 Efficiency based on number of tools, variety of tools used, and
                 correctness of tool usage.
               </p>
@@ -481,19 +481,37 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
+      {/* Competition Timeline with Event Details */}
       <Section title="Competition Timeline" dark>
-        <p className="text-md text-gray-700 mb-10 max-w-4xl">
+        <p className="text-md text-gray-700 mb-6 max-w-4xl">
           Below are the key milestones and dates for CURE-Bench. We recommend
-          subscribing to our <a
+          subscribing to our{" "}
+          <a
             href="https://github.com/mims-harvard/CURE-Bench"
             target="_blank"
             rel="noopener noreferrer"
             className="text-crimson-600 underline hover:text-crimson-800 transition"
           >
             GitHub repository
-          </a> for starter kit and submission
-          updates.
+          </a>{" "}
+          for starter kit and submission updates.
         </p>
+
+        {/* Event Details panel (concise) */}
+        <div className="mb-10 max-w-4xl">
+          <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl p-5 shadow-sm">
+            <h4 className="text-lg font-semibold text-crimson-800 mb-3">
+              NeurIPS 2025 Event Details
+            </h4>
+            <ul className="text-sm text-gray-800 space-y-1">
+              <li>📍 <strong>Venue:</strong> San Diego Convention Center, San Diego, California, United States</li>
+              <li>🗓️ <strong>Conference:</strong> December 2 – 7, 2025</li>
+              <li>🧪 <strong>Workshop:</strong> Saturday, December 6, 2025, 3:00–6:00 PM PST</li>
+              <li>🏛️ <strong>Room:</strong> Upper Level Ballroom 6DE</li>
+            </ul>
+          </div>
+        </div>
 
         <div className="flex flex-col space-y-6 border-l-4 border-crimson-300 pl-6">
           {[

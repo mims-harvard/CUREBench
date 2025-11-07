@@ -1,62 +1,130 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar"; 
+
 export default function FAQ() {
   return (
-   <>
-  <Navbar />
-    <main className="min-h-screen py-16 px-6 md:px-20 bg-white text-gray-800">
-      <h1 className="text-4xl font-serif font-bold mb-10 text-crimson text-center">Frequently Asked Questions</h1>
-      <div className="space-y-8 max-w-4xl mx-auto text-md md:text-lg font-sans">
-        
-        <div>
-          <h2 className="font-semibold text-crimson">Who can participate?</h2>
-          <p>Anyone. You may join individually or form a team.</p>
+    <>
+      <Navbar />
+      <main className="min-h-screen py-16 px-6 md:px-20 bg-white text-gray-800">
+        <h1 className="text-4xl font-serif font-bold mb-10 text-crimson text-center">
+          Frequently Asked Questions
+        </h1>
+        <div className="space-y-8 max-w-4xl mx-auto text-md md:text-lg font-sans">
+
+          <div>
+            <h2 className="font-semibold text-crimson">Who can participate?</h2>
+            <p>Anyone. You may join individually or form a team.</p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">How do I get started?</h2>
+            <p>
+              Download the starter kit from our{" "}
+              <a
+                href="https://github.com/mims-harvard/CURE-Bench"
+                className="text-blue-600 underline"
+              >
+                GitHub repository
+              </a>
+              . It includes baseline models, evaluation scripts, and example
+              JSONL submissions. You can submit your model predictions via{" "}
+              <a
+                href="https://www.kaggle.com/competitions/cure-bench"
+                className="text-blue-600 underline"
+              >
+                Kaggle
+              </a>
+              .
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">What are the tracks?</h2>
+            <p>
+              Track 1 evaluates models using only internal reasoning. Track 2 allows
+              agentic models to invoke external biomedical tools such as{" "}
+              <a
+                href="https://github.com/mims-harvard/ToolUniverse"
+                className="text-blue-600 underline"
+              >
+                ToolUniverse
+              </a>{" "}
+              during inference.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">
+              What are the additional awards and support programs?
+            </h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Winner Prizes ($10,000):</strong> Monetary awards will be
+                distributed to the top-performing teams in both competition tracks.
+              </li>
+              <li>
+                <strong>Travel Awards Program (up to $30,000):</strong> We will
+                provide financial support for 15 to 20 early-career researchers to
+                attend the CURE-Bench workshop at NeurIPS.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">Can I use GPT-4 or other APIs?</h2>
+            <p>
+              Yes, but submissions must follow the track guidelines. We will award
+              API-based model and open-weights models in separate categories.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">
+              What format should my submission follow?
+            </h2>
+            <p>
+              Use the JSONL format provided in the starter kit. Each line must
+              include: task ID, final answer, reasoning trace, and (Track 2) tool
+              usage log. A local evaluation script is provided.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">When is the deadline?</h2>
+            <p>
+              Final submissions are due by <strong>October 15, 2025</strong> at
+              11:59 PM AoE (Anywhere on Earth).
+            </p>
+          </div>
+
+          {/* New FAQ added here */}
+          <div>
+            <h2 className="font-semibold text-crimson">
+              When and where is the 2025 CURE-Bench NeurIPS workshop?
+            </h2>
+            <p>
+              The CURE-Bench workshop will take place during{" "}
+              <strong>NeurIPS 2025</strong> at the{" "}
+              <strong>San Diego Convention Center</strong> in San Diego,
+              California, United States. The conference runs from{" "}
+              <strong>December 2–7, 2025</strong>, and the CURE-Bench workshop
+              will be held on <strong>Saturday, December 6, 2025</strong>, from{" "}
+              <strong>3:00 p.m. to 6:00 p.m. PST</strong> in{" "}
+              <strong>Upper Level Ballroom 6DE</strong>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-semibold text-crimson">Who is organizing this?</h2>
+            <p>
+              CURE-Bench is organized by researchers at{" "}
+              <strong>Harvard Medical School</strong>,{" "}
+              <strong>MIT Lincoln Lab</strong>, and the{" "}
+              <strong>Milken Institute</strong>.
+            </p>
+          </div>
+
         </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">How do I get started?</h2>
-          <p>Download the starter kit from our <a href="https://github.com/mims-harvard/CURE-Bench" className="text-blue-600 underline">GitHub repository</a>. It includes baseline models, evaluation scripts, and example JSONL submissions. You can submit your model predictions via <a href="https://www.kaggle.com/competitions/cure-bench" className="text-blue-600 underline">Kaggle</a>.</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">What are the tracks?</h2>
-          <p>Track 1 evaluates models using only internal reasoning. Track 2 allows agentic models to invoke external biomedical tools such as <a href="https://github.com/mims-harvard/ToolUniverse" className="text-blue-600 underline">ToolUniverse</a> during inference.</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">What are the additional awards and support programs?</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <strong>Winner Prizes ($10,000):</strong> Monetary awards will be distributed to the top-performing teams in both competition tracks.
-            </li>
-            <li>
-              <strong>Travel Awards Program (up to $30,000):</strong> We will provide financial support for 15 to 20 early-career researchers to attend the CURE-Bench workshop at NeurIPS.
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">Can I use GPT-4 or other APIs?</h2>
-          <p>Yes, but submissions must follow the track guidelines. We will award API-based model and open-weights models in separate categories.</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">What format should my submission follow?</h2>
-          <p>Use the JSONL format provided in the starter kit. Each line must include: task ID, final answer, reasoning trace, and (Track 2) tool usage log. A local evaluation script is provided.</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">When is the deadline?</h2>
-          <p>Final submissions are due by <strong>October 15, 2025</strong> at 11:59 PM AoE (Anywhere on Earth).</p>
-        </div>
-
-        <div>
-          <h2 className="font-semibold text-crimson">Who is organizing this?</h2>
-          <p>CURE-Bench is organized by researchers at <strong>Harvard Medical School</strong>, <strong>MIT Lincoln Lab</strong>, and the <strong>Milken Institute</strong>.</p>
-        </div>
-
-
-      </div>
-    </main>
+      </main>
     </>
   );
 }
