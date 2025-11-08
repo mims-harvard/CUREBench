@@ -29,60 +29,56 @@ export default function Home() {
           therapeutic options.
         </p>
       </Section>
-	{/* NEW: Keynote Speaker Section (website-style) */}
+	{/* NEW: Keynote Speaker Section (concise + elegant) */}
 <Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
-  <div className="max-w-5xl mx-auto">
-    <div className="bg-white border border-crimson/30 rounded-2xl shadow-sm hover:shadow-md transition p-6 sm:p-8">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-        <img
-          src="https://lh3.googleusercontent.com/sitesv/AAzXCkf74Glro-amoVFyXjIktX9gSgDLC0wCCo_9avK1AqTkvs2JmJvTQtN4FtIBY4VaWsmm2eqmgaGbbuNpi69SHXBsKJG3x6S8ve5jjxs6gjVrZrOqInAhykcHVy-XcMwjTUjEPFv3lgvDypjwg86D1HT2-aWEg9ABrNdAGwcU4Y6ICMwHkEJvA-D5sRCn2pjV5r94IOE_xFSQvOlgCEwRTeejoPsSpX5_8VJV1Lg=w1280"
-          alt="Shekoofeh (Shek) Azizi"
-          className="w-32 h-32 rounded-full object-cover ring-2 ring-crimson/20"
-          loading="lazy"
-        />
+  <div className="max-w-5xl mx-auto bg-white border border-crimson/30 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10 sm:p-12 flex flex-col md:flex-row items-center gap-10">
+    <img
+      src="https://lh3.googleusercontent.com/sitesv/AAzXCkf74Glro-amoVFyXjIktX9gSgDLC0wCCo_9avK1AqTkvs2JmJvTQtN4FtIBY4VaWsmm2eqmgaGbbuNpi69SHXBsKJG3x6S8ve5jjxs6gjVrZrOqInAhykcHVy-XcMwjTUjEPFv3lgvDypjwg86D1HT2-aWEg9ABrNdAGwcU4Y6ICMwHkEJvA-D5sRCn2pjV5r94IOE_xFSQvOlgCEwRTeejoPsSpX5_8VJV1Lg=w1280"
+      alt="Shekoofeh (Shek) Azizi"
+      className="w-56 h-56 rounded-full object-cover ring-4 ring-crimson/20 shadow-md"
+      loading="lazy"
+    />
 
-        <div className="text-center sm:text-left w-full">
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-crimson-800">
-            Shekoofeh (Shek) Azizi
-          </h3>
-          <p className="text-gray-800 mt-1 font-medium">
-            Research Scientist, Google DeepMind
-          </p>
-
-          {/* keep this to 2–3 lines so it feels like a keynote blurb, not a bio page */}
-          <p className="text-gray-700 text-sm leading-relaxed mt-3 max-w-2xl">
-            Research lead advancing AI for biomedicine and therapeutics; work includes
-            Med-PaLM and Med-Gemini and spans cancer, single-cell biology, and clinical
-            reasoning.
-          </p>
-
-          <div className="mt-4">
-            <a
-              href="https://www.shekoofehazizi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-crimson/40 text-crimson-800 hover:bg-crimson/5 font-semibold"
-              aria-label="Visit Shekoofeh Azizi website"
-            >
-              Visit website
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17L17 7M7 7h10v10" />
-              </svg>
-            </a>
-          </div>
-        </div>
+    <div className="text-center md:text-left">
+      <h3 className="text-3xl font-serif font-bold text-crimson-800 mb-1">
+        Shekoofeh (Shek) Azizi
+      </h3>
+      <p className="text-lg text-gray-800 font-medium mb-4">
+        Research Scientist, Google DeepMind
+      </p>
+      <p className="text-gray-700 leading-relaxed text-base max-w-2xl">
+        Dr. Shekoofeh Azizi is a research scientist at Google DeepMind, leading efforts to apply
+        large language models to biomedicine and clinical reasoning. Her work spans cancer, 
+        single-cell biology, and trustworthy medical AI systems, including DeepMind’s Med-PaLM 
+        and Med-Gemini projects. Her research has appeared in <em>Nature</em> and 
+        <em> Nature Medicine</em> and has been recognized with national and international awards 
+        for advancing AI in healthcare.
+      </p>
+      <div className="mt-5">
+        <a
+          href="https://www.shekoofehazizi.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-crimson/40 text-crimson-800 font-semibold hover:bg-crimson/5 transition"
+        >
+          Visit Website
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 </Section>
 {/* END NEW SECTION */}
+
 
 
 
