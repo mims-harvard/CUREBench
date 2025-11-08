@@ -33,8 +33,8 @@ export default function Home() {
 <Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
   <div className="max-w-5xl mx-auto bg-white border border-crimson/30 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10 sm:p-12 flex flex-col md:flex-row items-center gap-10">
     <img
-      src="https://lh3.googleusercontent.com/sitesv/AAzXCkf74Glro-amoVFyXjIktX9gSgDLC0wCCo_9avK1AqTkvs2JmJvTQtN4FtIBY4VaWsmm2eqmgaGbbuNpi69SHXBsKJG3x6S8ve5jjxs6gjVrZrOqInAhykcHVy-XcMwjTUjEPFv3lgvDypjwg86D1HT2-aWEg9ABrNdAGwcU4Y6ICMwHkEJvA-D5sRCn2pjV5r94IOE_xFSQvOlgCEwRTeejoPsSpX5_8VJV1Lg=w1280"
-      alt="Shekoofeh (Shek) Azizi"
+      src="people/Shek.jpg"      
+	  alt="Shekoofeh (Shek) Azizi"
       className="w-56 h-56 rounded-full object-cover ring-4 ring-crimson/20 shadow-md"
       loading="lazy"
     />
