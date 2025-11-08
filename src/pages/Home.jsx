@@ -29,44 +29,60 @@ export default function Home() {
           therapeutic options.
         </p>
       </Section>
-	{/* NEW: Keynote Speaker Section */}
-	<Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
-	<div className="max-w-5xl mx-auto bg-white border border-crimson/30 rounded-2xl shadow-md hover:shadow-lg transition p-8 flex flex-col sm:flex-row items-center gap-8">
-		<img
-		src="https://lh3.googleusercontent.com/sitesv/AAzXCkf74Glro-amoVFyXjIktX9gSgDLC0wCCo_9avK1AqTkvs2JmJvTQtN4FtIBY4VaWsmm2eqmgaGbbuNpi69SHXBsKJG3x6S8ve5jjxs6gjVrZrOqInAhykcHVy-XcMwjTUjEPFv3lgvDypjwg86D1HT2-aWEg9ABrNdAGwcU4Y6ICMwHkEJvA-D5sRCn2pjV5r94IOE_xFSQvOlgCEwRTeejoPsSpX5_8VJV1Lg=w1280"
-		alt="Shekoofeh (Shek) Azizi"
-		className="w-48 h-48 rounded-full object-cover ring-4 ring-crimson/20"
-		loading="lazy"
-		/>
-		<div className="text-center sm:text-left">
-		<h3 className="text-3xl font-serif font-bold text-crimson-800 mb-2">
-			Shekoofeh (Shek) Azizi
-		</h3>
-		<p className="text-lg text-gray-800 font-medium mb-3">
-			Research Scientist, Google DeepMind
-		</p>
-		<p className="text-gray-700 text-sm leading-relaxed max-w-2xl mb-4">
-			Dr. Shekoofeh Azizi is a research lead at Google DeepMind, where she
-			pioneers biomedical super-intelligence for scientific discovery and
-			precision therapeutics. Her work bridges artificial intelligence and
-			medicine, with a special focus on cancer, single-cell biology, and
-			medical large language models such as Med-PaLM and Med-Gemini. Her
-			research has been featured in <em>Nature</em>, <em>Nature Medicine</em>,
-			and <em>CVPR</em>, and she has received national recognition including
-			the Governor General’s Canada Academic Gold Medal.
-		</p>
-		<a
-			href="https://www.shekoofehazizi.com/"
-			target="_blank"
-			rel="noopener noreferrer"
-			className="inline-block text-crimson-700 font-semibold underline decoration-dotted hover:text-crimson-900 transition"
-		>
-			View full profile →
-		</a>
-		</div>
-	</div>
-	</Section>
-	{/* END NEW SECTION */}
+	{/* NEW: Keynote Speaker Section (website-style) */}
+<Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
+  <div className="max-w-5xl mx-auto">
+    <div className="bg-white border border-crimson/30 rounded-2xl shadow-sm hover:shadow-md transition p-6 sm:p-8">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/AAzXCkf74Glro-amoVFyXjIktX9gSgDLC0wCCo_9avK1AqTkvs2JmJvTQtN4FtIBY4VaWsmm2eqmgaGbbuNpi69SHXBsKJG3x6S8ve5jjxs6gjVrZrOqInAhykcHVy-XcMwjTUjEPFv3lgvDypjwg86D1HT2-aWEg9ABrNdAGwcU4Y6ICMwHkEJvA-D5sRCn2pjV5r94IOE_xFSQvOlgCEwRTeejoPsSpX5_8VJV1Lg=w1280"
+          alt="Shekoofeh (Shek) Azizi"
+          className="w-32 h-32 rounded-full object-cover ring-2 ring-crimson/20"
+          loading="lazy"
+        />
+
+        <div className="text-center sm:text-left w-full">
+          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-crimson-800">
+            Shekoofeh (Shek) Azizi
+          </h3>
+          <p className="text-gray-800 mt-1 font-medium">
+            Research Scientist, Google DeepMind
+          </p>
+
+          {/* keep this to 2–3 lines so it feels like a keynote blurb, not a bio page */}
+          <p className="text-gray-700 text-sm leading-relaxed mt-3 max-w-2xl">
+            Research lead advancing AI for biomedicine and therapeutics; work includes
+            Med-PaLM and Med-Gemini and spans cancer, single-cell biology, and clinical
+            reasoning.
+          </p>
+
+          <div className="mt-4">
+            <a
+              href="https://www.shekoofehazizi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-crimson/40 text-crimson-800 hover:bg-crimson/5 font-semibold"
+              aria-label="Visit Shekoofeh Azizi website"
+            >
+              Visit website
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>
+{/* END NEW SECTION */}
 
 
 
