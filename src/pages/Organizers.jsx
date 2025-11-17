@@ -46,6 +46,15 @@ const technicalOrganizers = [
 		},
 	},
 	{
+		name: "Pengwei Sui",
+		title: "Research Associate",
+		affiliation: "Harvard DBMI",
+		img: "people/psui.jpg",
+		links: {
+			page: "https://psui3905.github.io/",
+		},
+	},
+	{
 		name: "Curtis Ginder",
 		title: "Clinical Fellow",
 		affiliation: "Brigham and Women's / MGH",
