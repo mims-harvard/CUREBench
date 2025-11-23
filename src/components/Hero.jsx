@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="mt-4 max-w-3xl text-sm md:text-base text-gray-200 z-10 leading-relaxed">
         <p>• <strong>Venue:</strong> San Diego Convention Center, San Diego, California, United States</p>
         <p>• <strong>Conference Dates:</strong> December 2 – 7, 2025</p>
-        <p>• <strong>Workshop Schedule:</strong> Saturday, December 6, 2025, from 3:00 p.m. to 6:00 p.m. PST</p>
+        <p>• <strong>Workshop Schedule:</strong> Saturday, December 6, 2025, from 2:00 p.m. to 4:45 p.m. PST</p>
         <p>• <strong>Location:</strong> Upper Level Ballroom 6DE</p>
       </div>
 
