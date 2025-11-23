@@ -29,58 +29,126 @@ export default function Home() {
           therapeutic options.
         </p>
       </Section>
-	{/* NEW: Keynote Speaker Section (concise + elegant) */}
-<Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
-  <div className="max-w-5xl mx-auto bg-white border border-crimson/30 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10 sm:p-12 flex flex-col md:flex-row items-center gap-10">
-    <img
-      src="people/shek.png"      
-	  alt="Shekoofeh (Shek) Azizi"
-      className="w-56 h-56 rounded-full object-cover ring-4 ring-crimson/20 shadow-md"
-      loading="lazy"
-    />
 
-    <div className="text-center md:text-left">
-      <h3 className="text-3xl font-serif font-bold text-crimson-800 mb-1">
-        Shekoofeh (Shek) Azizi
-      </h3>
-      <p className="text-lg text-gray-800 font-medium mb-4">
-        Research Scientist, Google DeepMind
-      </p>
-      <p className="text-gray-700 leading-relaxed text-base max-w-2xl">
-        Dr. Shekoofeh Azizi is a research scientist at Google DeepMind, leading efforts to apply
-        large language models to biomedicine and clinical reasoning. Her work spans cancer, 
-        single-cell biology, and trustworthy medical AI systems, including DeepMind’s Med-PaLM 
-        and Med-Gemini projects. Her research has appeared in <em>Nature</em> and 
-        <em> Nature Medicine</em> and has been recognized with national and international awards 
-        for advancing AI in healthcare.
-      </p>
-      <div className="mt-5">
-        <a
-          href="https://www.shekoofehazizi.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-crimson/40 text-crimson-800 font-semibold hover:bg-crimson/5 transition"
-        >
-          Visit Website
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M7 17L17 7M7 7h10v10" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</Section>
-{/* END NEW SECTION */}
+      {/* NEW: Keynote Speaker Section (concise + elegant) */}
+      <Section title="NeurIPS 2025 CUREBench Workshop - Keynote Speaker" dark>
+        <div className="max-w-5xl mx-auto bg-white border border-crimson/30 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 p-10 sm:p-12 flex flex-col md:flex-row items-center gap-10">
+          <img
+            src="people/shek.png"
+            alt="Shekoofeh (Shek) Azizi"
+            className="w-56 h-56 rounded-full object-cover ring-4 ring-crimson/20 shadow-md"
+            loading="lazy"
+          />
 
+          <div className="text-center md:text-left">
+            <h3 className="text-3xl font-serif font-bold text-crimson-800 mb-1">
+              Shekoofeh (Shek) Azizi
+            </h3>
+            <p className="text-lg text-gray-800 font-medium mb-4">
+              Research Scientist, Google DeepMind
+            </p>
 
+            {/* Talk Title */}
+            <p className="text-gray-800 leading-relaxed text-base max-w-2xl mb-3">
+              <span className="font-semibold">Title: </span>
+              Biomedical AI Agents: From Reasoning to Discovery
+            </p>
 
+            {/* Talk Abstract */}
+            <p className="text-gray-800 leading-relaxed text-base max-w-2xl mb-4">
+              <span className="font-semibold">Abstract: </span>
+              The field of biomedical AI is undergoing a paradigm shift,
+              evolving from static prediction tools to generalist agents capable
+              of reasoning, tool use, and scientific discovery. This talk
+              explores this transition from passive models to active agents and
+              presents Google DeepMind’s latest advancements in the space,
+              including TxGemma, MedGemma, and Cell2Sentence (C2S).
+            </p>
+
+            {/* Bio */}
+            <p className="text-gray-700 leading-relaxed text-base max-w-2xl">
+              <span className="font-semibold">Bio: </span>
+              Dr. Shekoofeh Azizi is a research scientist at Google DeepMind,
+              leading efforts to apply large language models to biomedicine and
+              clinical reasoning. Her work spans cancer, single-cell biology,
+              and trustworthy medical AI systems, including DeepMind’s Med-PaLM
+              and Med-Gemini projects. Her research has appeared in{" "}
+              <em>Nature</em> and <em>Nature Medicine</em> and has been
+              recognized with national and international awards for advancing AI
+              in healthcare.
+            </p>
+
+            <div className="mt-5 flex flex-wrap gap-3 justify-center md:justify-start">
+              <a
+                href="https://www.shekoofehazizi.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-crimson/40 text-crimson-800 font-semibold hover:bg-crimson/5 transition"
+              >
+                Visit Personal Website
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+      {/* END NEW SECTION */}
+
+      {/* NEW: Schedule Section */}
+      <Section title="Schedule">
+        <div className="max-w-3xl mx-auto text-gray-800">
+          <p className="mb-4 text-center text-sm sm:text-base">
+            <span className="font-semibold">Workshop Time:</span>{" "}
+            Sat 6 Dec 2:00 p.m. PST — 4:45 p.m. PST
+          </p>
+
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+            <ul className="space-y-2 text-sm sm:text-base">
+              <li>
+                <span className="font-semibold">2:00 – 2:05 PM</span> — Opening
+              </li>
+              <li>
+                <span className="font-semibold">2:05 – 2:50 PM</span> — Keynote
+                Presentation
+              </li>
+              <li>
+                <span className="font-semibold">2:50 – 3:05 PM</span> —
+                Competition Briefing
+              </li>
+              <li>
+                <span className="font-semibold">3:05 – 3:25 PM</span> — Award
+                Ceremony
+              </li>
+              <li>
+                <span className="font-semibold">3:25 – 4:45 PM</span> — Winning
+                Team Presentations
+              </li>
+            </ul>
+          </div>
+
+          <p className="mt-4 text-center text-sm text-gray-700">
+            Official NeurIPS page:{" "}
+            <a
+              href="https://neurips.cc/virtual/2025/loc/san-diego/competition/127720"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-crimson-600 underline hover:text-crimson-800 transition"
+            >
+              neurips.cc/virtual/2025/loc/san-diego/competition/127720
+            </a>
+          </p>
+        </div>
+      </Section>
+      {/* END NEW SCHEDULE SECTION */}
 
       <Section title="Competition Tracks" dark>
         <div className="grid md:grid-cols-2 gap-8">
@@ -129,6 +197,7 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
       <Section title="Therapeutic Reasoning Tasks">
         <p className="text-md text-gray-700 mb-6">
           CURE-Bench features 12 real-world biomedical reasoning tasks spanning
@@ -201,6 +270,7 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
       <Section title="Agentic Dataset Generation Pipeline" dark>
         <p className="text-md text-gray-700 mb-10">
           Built on top of{" "}
@@ -256,6 +326,7 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
       <Section title="Evaluation Criteria">
         <p className="text-md text-gray-700 mb-10">
           Submissions to CURE-Bench are evaluated through a weighted aggregate
@@ -533,18 +604,20 @@ export default function Home() {
           </div>
         </div>
       </Section>
+
       <Section title="Competition Timeline" dark>
         <p className="text-md text-gray-700 mb-10 max-w-4xl">
           Below are the key milestones and dates for CURE-Bench. We recommend
-          subscribing to our <a
+          subscribing to our{" "}
+          <a
             href="https://github.com/mims-harvard/CURE-Bench"
             target="_blank"
             rel="noopener noreferrer"
             className="text-crimson-600 underline hover:text-crimson-800 transition"
           >
             GitHub repository
-          </a> for starter kit and submission
-          updates.
+          </a>{" "}
+          for starter kit and submission updates.
         </p>
 
         <div className="flex flex-col space-y-6 border-l-4 border-crimson-300 pl-6">
@@ -558,7 +631,9 @@ export default function Home() {
               key={i}
               className="flex flex-col md:flex-row gap-3 md:items-center"
             >
-              <div className="text-crimson font-semibold w-20">{item.date}</div>
+              <div className="text-crimson font-semibold w-20">
+                {item.date}
+              </div>
               <div className="text-sm text-gray-800">{item.label}</div>
             </div>
           ))}
@@ -669,12 +744,14 @@ export default function Home() {
 
       <Section title="Organizers and Partners" dark>
         <p className="mb-4">
-          In collaboration with Harvard Medical School, Harvard University, MIT, the Kempner Institute, Brigham and Women's Hospital, the Chan Zuckerberg Initiative, the Milken Institute, and the Biswas Family Foundation,
-          CURE-Bench provides a rigorous, reproducible competition framework for
-          assessing the performance, robustness, and interpretability of
-          reasoning models in high-stakes clinical applications. It will
-          accelerate the development of therapeutic AI and foster collaboration
-          between AI and therapeutics communities.
+          In collaboration with Harvard Medical School, Harvard University, MIT,
+          the Kempner Institute, Brigham and Women's Hospital, the Chan
+          Zuckerberg Initiative, the Milken Institute, and the Biswas Family
+          Foundation, CURE-Bench provides a rigorous, reproducible competition
+          framework for assessing the performance, robustness, and
+          interpretability of reasoning models in high-stakes clinical
+          applications. It will accelerate the development of therapeutic AI and
+          foster collaboration between AI and therapeutics communities.
         </p>
       </Section>
 
