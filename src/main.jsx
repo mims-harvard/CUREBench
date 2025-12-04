@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import FAQ from "./pages/FAQ";
 import Organizers from "./pages/Organizers";
+import Posters from "./pages/Posters";
 
 document.title = "CURE-Bench @ NeurIPS 2025 – AI Reasoning for Therapeutic Decision-Making";
 
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/posters" element={<Posters />} />
         <Route path="/organizers" element={<Organizers />} />
       </Routes>
     </BrowserRouter>
