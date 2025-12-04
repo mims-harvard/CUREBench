@@ -13,7 +13,6 @@ export default function Navbar() {
         <div className="space-x-6 text-sm">
           <Link to="/" className={pathname === "/" ? "text-blue-700 font-semibold" : "text-gray-700 hover:text-blue-800"}>Home</Link>
           <Link to="/faq" className={pathname === "/faq" ? "text-blue-700 font-semibold" : "text-gray-700 hover:text-blue-800"}>FAQ</Link>
-          <Link to="/posters" className={pathname === "/posters" ? "text-blue-700 font-semibold" : "text-gray-700 hover:text-blue-800"}>Posters</Link>
           <Link to="/organizers" className={pathname === "/organizers" ? "text-blue-700 font-semibold" : "text-gray-700 hover:text-blue-800"}>Organizers</Link>
         </div>
       </div>

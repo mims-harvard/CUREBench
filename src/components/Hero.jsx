@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="relative h-screen bg-blue-950 text-white flex flex-col justify-center items-center text-center px-6 md:px-12">
@@ -46,6 +48,11 @@ export default function Hero() {
             Submit your Therapeutic Questions
           </button>
         </a>
+        <Link to="/posters">
+          <button className="px-4 py-2 rounded-xl bg-crimson text-white font-medium shadow hover:shadow-md transition">
+            View Posters
+          </button>
+        </Link>
       </div>
     </section>
   );
