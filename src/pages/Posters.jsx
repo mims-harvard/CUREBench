@@ -197,7 +197,7 @@ export default function Posters() {
               Posters
             </h1>
             <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto font-sans">
-              Browse the posters and open the PDFs directly. Previews show the first page of each poster.
+              Explore the latest CURE-Bench posters highlighting teams’ therapeutic reasoning approaches.
             </p>
           </header>
 
