@@ -26,7 +26,7 @@ const posters = [
   },
   {
     title: "MedPathAgent",
-    authors: "MedPathAgent Team",
+    authors: "Ms. Hannah Bansal, Dr. Daniel Cabrera Lozoya, Prof. Karin Verspoor",
     file: medPathAgentPoster,
     preview: medPathAgentPoster,
   },
@@ -51,25 +51,26 @@ const posters = [
   },
   {
     title: "CureAgent",
-    authors: "CureAgent Team",
+    authors: "Ting-Ting Xie, Yixin Zhang",
     file: cureAgentPoster,
     preview: cureAgentPoster,
   },
   {
-    title: "Datanet Studio",
-    authors: "Datanet Studio Team",
+    title: "MedGemma",
+    authors: "Utkala Mohanty",
     file: datanetStudioPoster,
     preview: datanetStudioPoster,
   },
   {
     title: "DMIS Structured Pipeline",
-    authors: "DMIS Team",
+    authors: "Suhyeon Lim, Sungwook Jung, Hyeon Hwang, Jueon Park, Jaewoo Kang",
     file: dmisPoster,
     preview: dmisPoster,
   },
   {
     title: "MedAI Therapeutic Reasoning",
-    authors: "MedAI Team",
+    authors:
+      "Tim Cofala, Christian Kalfar, Jingge Xiao, Johanna Schrader, Dr. Michelle Tang, Prof. Dr. Wolfgang Nejdl",
     file: medAIPoster,
     preview: medAIPoster,
   },
@@ -83,13 +84,14 @@ const posters = [
   {
     title: "CliniThink by Preceptor AI",
     authors:
-      "Amrest Chinkamol, Natpatchara Pongjirapat, Krittaphas Chaisutyakorn, Naphat Sorn",
+      "Amrest Chinkamol, Natpatchara Pongjirapat, Krittaphas Chaisutyakorn, Naphat Sornwichai, Supawit Tangpanithandee, Tara Sripo, Kanyakorn Veerakanjana, Nutchanon Yongsatianchot, Piyalitt Ittichaiwong",
     file: preceptorAIPoster,
     preview: preceptorAIPoster,
   },
   {
     title: "RAISE-ODL",
-    authors: "RAISE-ODL Team",
+    authors:
+      "Qizhi Pei, Yi Duan, Honglin Lin, Yu Li, Xin Gao, Lijun Wu - Shanghai Artificial Intelligence Laboratory",
     file: raiseOdlPoster,
     preview: raiseOdlPoster,
   },
@@ -114,7 +116,7 @@ const posters = [
   },
   {
     title: "York University Submission",
-    authors: "York University Team",
+    authors: "Israt Jahan, Md Tahmid Rahman Laskar, Chun Peng, Jimmy Huang",
     file: yorkPoster,
     preview: yorkPoster,
   },
@@ -141,7 +143,7 @@ export default function Posters() {
                 key={poster.title}
                 className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-200 overflow-hidden"
               >
-                <div className="h-96 bg-gray-50 border-b border-slate-200">
+                <div className="h-[36rem] bg-gray-50 border-b border-slate-200">
                   <object
                     data={`${poster.preview}#page=1&view=FitH`}
                     type="application/pdf"
