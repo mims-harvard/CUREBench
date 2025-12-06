@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import agataPoster from "../poster/Agata.pdf";
 import beijingPoster from "../poster/BeijingLogicIntelligenceTechnology.pdf";
 import constanzeCarePoster from "../poster/ConstanzeCare.pdf";
 import internalReasoningPoster from "../poster/cure-bench_Poster.pdf";
@@ -7,8 +6,6 @@ import curaivePoster from "../poster/CURE-Bench  - Agata Polejowska, Radboudumc 
 import cureAgentPoster from "../poster/CureAgent.pdf";
 import datanetStudioPoster from "../poster/DatanetStudio.pdf";
 import dmisPoster from "../poster/DMIS.pdf";
-import hannahBansalPoster from "../poster/HannahBansal.pdf";
-import huimeiTechPoster from "../poster/HuimeiTech.pdf";
 import medAIPoster from "../poster/MedAI.pdf";
 import medPathAgentPoster from "../poster/MedPathAgent_CureBENCH_NeurIPS2025.pdf";
 import medXIAOHePoster from "../poster/MedXIAOHe.pdf";
@@ -52,16 +49,6 @@ const posters = [
       "Adaptive decision-support system producing structured reports for benchmark cases.",
     file: curaivePoster,
     preview: curaivePoster,
-  },
-  {
-    title: "Curaive (Agata Poster)",
-    authors: "Agata Polejowska - Radboudumc",
-    track: "Agentic and Internal Reasoning Tracks",
-    venue: defaultVenue,
-    summary:
-      "Three-section scaffolded prompting with a precision therapeutics focus.",
-    file: agataPoster,
-    preview: agataPoster,
   },
   {
     title: "Orchestrating Clinical Evidence",
@@ -113,26 +100,6 @@ const posters = [
       "Structured tool-augmented pipeline leveraging GPT-5 for clinical reasoning.",
     file: dmisPoster,
     preview: dmisPoster,
-  },
-  {
-    title: "MedPathAgent (Hannah Bansal)",
-    authors: "Hannah Bansal",
-    track: "Agentic Tool-Augmented Reasoning Track",
-    venue: defaultVenue,
-    summary:
-      "Knowledge-graph augmented agent emphasizing grounding for safe medical AI.",
-    file: hannahBansalPoster,
-    preview: hannahBansalPoster,
-  },
-  {
-    title: "Huimei Tech",
-    authors: "Huimei Tech Team",
-    track: "Agentic Tool-Augmented Reasoning Track",
-    venue: defaultVenue,
-    summary:
-      "Prompted decision-making using ToolUniverse for clinical safety and efficacy tasks.",
-    file: huimeiTechPoster,
-    preview: huimeiTechPoster,
   },
   {
     title: "MedAI Therapeutic Reasoning",
@@ -198,7 +165,7 @@ const posters = [
     preview: ustwPoster,
   },
   {
-    title: "VIM Track 1 Solution",
+    title: "VIM",
     authors: "Vladimir Manuilov, Ilya Makarov",
     track: "Internal Model Reasoning Track",
     venue: defaultVenue,
